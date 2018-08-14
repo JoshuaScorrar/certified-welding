@@ -10,20 +10,22 @@
 </template>
 
 <script>
-  import 'particles.js/particles'
+  import '../../plugins/particles'
   import TweenMax from 'gsap'
   const particlesJS = window.particlesJS
+  let pJS
+
   export default {
     metaInfo () {
       return {
-        titleTemplate: '%s — Alpha Theme'
+        titleTemplate: '%s'
       }
     },
     watch: {
       $route (to, from) {
         TweenMax.set('#particles-js', {autoAlpha: 0})
         setTimeout(() => {
-          window.pJSDom[0].pJS.fn.reset()
+          pJS.fn.reset()
           TweenMax.to('#particles-js', 0.4, {autoAlpha: 1})
         }, 1000)
       }
@@ -32,6 +34,7 @@
       setTimeout(() => {
         particlesJS.load('particles-js', 'static/assets/particles.json', function () {
           console.log('callback - particles-js config loaded')
+          pJS = window.pJSDom[0].pJS
         })
       }, 500)
     }
@@ -48,6 +51,6 @@
     left:0;
   }
   .application .theme--light.v-card, .application.theme--light{
-   background: transparent;
+    background: transparent;
   }
 </style>
