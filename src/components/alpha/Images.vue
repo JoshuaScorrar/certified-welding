@@ -69,6 +69,7 @@
 </template>
 
 <script>
+  import TweenMax from 'gsap'
   export default {
     name: 'alpha-gallery',
 
@@ -106,6 +107,11 @@
       },
       select (category) {
         this.category = category.filter
+        TweenMax.set('#particles-js', {autoAlpha: 0})
+        setTimeout(() => {
+          window.pJSDom[0].pJS.fn.reset()
+          TweenMax.to('#particles-js', 0.4, {autoAlpha: 1})
+        }, 300)
       }
     }
   }
