@@ -1,14 +1,24 @@
 <template>
   <div class="alpha-gallery">
-    <v-dialog v-model="dialog" max-width="90%">
+    <v-dialog v-if="dialog" v-model="dialog" max-width="90%">
       <v-carousel
         height="80vh"
-        :cycle="false"
         :hide-delimiters="true"
         :value="projectIndex">
+        <v-btn
+          dark
+          small
+          absolute
+          top
+          fab
+          right
+          mt5
+          @click.native="dialog = false"
+        >
+          <v-icon>clear</v-icon>
+        </v-btn>
         <v-carousel-item
           v-for="(pro, i) in computedProjects"
-          v-if="dialog"
           :key="i"
           :src="`/static/img/${pro.img}`"
         ></v-carousel-item>
@@ -118,6 +128,10 @@
 </script>
 
 <style>
+  .v-btn--top.v-btn--absolute.v-btn--small{
+    top: 20px;
+    right: 20px;
+  }
   .gallery-card {
     transform-origin: center center 0;
     transition: .3s cubic-bezier(.25,.8,.50,1);
