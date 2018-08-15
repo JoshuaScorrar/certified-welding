@@ -5,6 +5,7 @@
         v-for="(category, i) in categories"
         :key="i"
         @click="select(category)"
+        class="transparent"
       >
         <span v-text="category.text" />
       </v-tab>
@@ -17,7 +18,9 @@
         style="min-height: 450px"
       >
         <v-flex
-          xs4
+          xs12
+          md6
+          lg3
           v-for="project in computedProjects"
           :key="project.img"
           gallery-card
@@ -78,12 +81,14 @@
   }
 </script>
 
-<style scoped>
+<style>
   .gallery-card {
     transform-origin: center center 0;
     transition: .3s cubic-bezier(.25,.8,.50,1);
   }
-
+  .v-tabs__bar {
+    background-color: transparent !important;
+  }
   .fade-transition-leave,
   .fade-transition-leave-active,
   .fade-transition-leave-to {

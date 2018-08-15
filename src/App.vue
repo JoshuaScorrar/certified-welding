@@ -12,3 +12,7 @@
 
   </v-app>
 </template>
+<style lang="stylus">
+  .pointer
+    cursor pointer
+</style>

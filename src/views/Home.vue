@@ -37,9 +37,10 @@
             align-start
           >
             <v-flex
-              xs12
-              sm3
+              xs10
+              sm4
               align-start
+
               v-for="(testimonial, i) in testimonials"
               :class="['mi--' + i]"
               :key="i"
@@ -71,10 +72,12 @@
           align-center
           justify-space-around
           wrap
+
         >
           <v-flex
             xs10
             md6
+
           >
             <alpha-testimonial
               :author="testimonials[2].author"
@@ -105,9 +108,6 @@
       onScroll () {
         this.isScrolling = (window.pageYOffset ||
           document.documentElement.scrollTop || 0) > (this.$el.clientHeight || 100)
-      },
-      cardScroll () {
-        console.log('s')
       }
     },
     computed: {

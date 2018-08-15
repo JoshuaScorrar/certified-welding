@@ -10,18 +10,21 @@
   "cardFeatures": [
 
     {
-      "title": "Relentless pursuit of your vision",
-      "text": "Our commitment to excellence and continous improvement, to building lasting relationships with our clients, and to the team members who create your vision, are the guiding principles that assure successful outcomes on every project we build.",
+      "name": "Projects",
+      "title": "PROJECTS",
+      "text": "Certified Welding has worked on a variety of both big and small projects. We take pride in what we've put into the world, go and check them out!",
       "img": "welding/weld-2"
     },
     {
-      "title": "Award-winning architecture",
-      "text": "Every achievement begins with a vision. It is built on a foundation of creative concepts and dreams to become something bigger and better. At AlphaConstruction we build with those who follow a vision, not a path.",
+      "name": "Services",
+      "title": "SERVICES",
+      "text": "Concrete Moulds, Structural Steel, Transport and much much more. Certified Welding offers a wide range of services to achieve the vision of our clients.",
       "img": "welding/weld-1"
     },
     {
-      "title": "Your vision - Our mission",
-      "text": "To build an everlasting environment of trust with our clients and team members that will foster customer loyalty by delivering superior service and quality projects.",
+      "name": "Gallery",
+      "title": "ABOUT",
+      "text": "The team at Certified Welding strives for excellence in the pursuit of your vision. Find out more about our values and the team!",
       "img": "welding/weld-3"
     }
   ],

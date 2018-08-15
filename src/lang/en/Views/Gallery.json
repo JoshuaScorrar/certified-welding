@@ -1,0 +1,249 @@
+{
+  "jumbotronTitle": "WHAT WE'VE DONE",
+  "jumbotronSubTitle": "Relentlessly advancing our clients\" visions, beyond their expectations",
+  "carouselImages": [
+    "static/img/welding/1.jpg",
+    "static/img/welding/2.jpg",
+    "static/img/welding/3.jpg",
+    "static/img/welding/4.jpg"
+  ],
+  "categories": [
+    {
+      "text": "All",
+      "filter": null
+    },
+    {
+      "text": "Installation",
+      "filter": 1
+    },
+    {
+      "text": "Workshop",
+      "filter": 2
+    },
+    {
+      "text": "Transport",
+      "filter": 3
+    },
+    {
+      "text": "Moulds",
+      "filter": 4
+    },
+    {
+      "text": "Pumps",
+      "filter": 5
+    }
+  ],
+  "projects": [
+    {
+      "name": "concrete-mould-a",
+      "img": "cert-weld/concrete-mould/a.jpg",
+      "categories": [
+        4,
+        3
+      ]
+    },
+    {
+      "name": "concrete-mould-b",
+      "img": "cert-weld/concrete-mould/b.jpg",
+      "categories": [
+        4,
+        3
+      ]
+    },
+    {
+      "name": "concrete-mould-c",
+      "img": "cert-weld/concrete-mould/c.jpg",
+      "categories": [
+        2,
+        4
+      ]
+    },
+    {
+      "name": "concrete-mould-d",
+      "img": "cert-weld/concrete-mould/d.jpg",
+      "categories": [
+        4
+      ]
+    },
+    {
+      "name": "concrete-mould-e",
+      "img": "cert-weld/concrete-mould/e.jpg",
+      "categories": [
+        2,
+        4
+      ]
+    },
+    {
+      "name": "concrete-pumps-a",
+      "img": "cert-weld/concrete-pumps/a.jpg",
+      "categories": [
+        3,
+        5
+      ]
+    },
+    {
+      "name": "concrete-pumps-b",
+      "img": "cert-weld/concrete-pumps/b.jpg",
+      "categories": [
+        3,
+        5
+      ]
+    },
+    {
+      "name": "concrete-pumps-c",
+      "img": "cert-weld/concrete-pumps/c.jpg",
+      "categories": [
+        3,
+        5
+      ]
+    },
+    {
+      "name": "concrete-pumps-d",
+      "img": "cert-weld/concrete-pumps/d.jpg",
+      "categories": [
+        3,
+        5
+      ]
+    },
+    {
+      "name": "concrete-pumps-e",
+      "img": "cert-weld/concrete-pumps/e.jpg",
+      "categories": [
+        3,
+        5
+      ]
+    },
+    {
+      "name": "h-and-b-a",
+      "img": "cert-weld/h-and-b/a.jpg",
+      "categories": [
+        1
+      ]
+    },
+    {
+      "name": "h-and-b-b",
+      "img": "cert-weld/h-and-b/b.jpg",
+      "categories": [
+        1
+      ]
+    },
+    {
+      "name": "h-and-b-c",
+      "img": "cert-weld/h-and-b/c.jpg",
+      "categories": [
+        1
+      ]
+    },
+    {
+      "name": "narek-a",
+      "img": "cert-weld/narek/a.jpg",
+      "categories": [
+        1
+      ]
+    },
+    {
+      "name": "narek-b",
+      "img": "cert-weld/narek/b.jpg",
+      "categories": [
+        1,
+        3
+      ]
+    },
+    {
+      "name": "narek-c",
+      "img": "cert-weld/narek/c.jpg",
+      "categories": [
+        1,
+        3
+      ]
+    },
+    {
+      "name": "narek-d",
+      "img": "cert-weld/narek/d.jpg",
+      "categories": [
+        1,
+        3
+      ]
+    },
+    {
+      "name": "stairs-a",
+      "img": "cert-weld/stairs/a.jpg",
+      "categories": [
+        1,
+        3
+      ]
+    },
+    {
+      "name": "stairs-b",
+      "img": "cert-weld/stairs/b.jpg",
+      "categories": [
+        1,
+        3
+      ]
+    },
+    {
+      "name": "stairs-c",
+      "img": "cert-weld/stairs/c.jpg",
+      "categories": [
+        1,
+        3
+      ]
+    },
+    {
+      "name": "structural-steel-a",
+      "img": "cert-weld/structural-steel/a.jpg",
+      "categories": [
+        1,
+        3
+      ]
+    },
+    {
+      "name": "structural-steel-b",
+      "img": "cert-weld/structural-steel/b.jpg",
+      "categories": [
+        1,
+        3
+      ]
+    },
+    {
+      "name": "structural-steel-c",
+      "img": "cert-weld/structural-steel/c.jpg",
+      "categories": [
+        1,
+        3
+      ]
+    },
+    {
+      "name": "structural-steel-d",
+      "img": "cert-weld/structural-steel/d.jpg",
+      "categories": [
+        1,
+        3
+      ]
+    },
+    {
+      "name": "transport-a",
+      "img": "cert-weld/transport/a.jpg",
+      "categories": [
+        1,
+        3
+      ]
+    },
+    {
+      "name": "transport-b",
+      "img": "cert-weld/transport/b.jpg",
+      "categories": [
+        1,
+        3
+      ]
+    },
+    {
+      "name": "transport-c",
+      "img": "cert-weld/transport/c.jpg",
+      "categories": [
+        1,
+        3
+      ]
+    }
+  ]
+}

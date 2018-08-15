@@ -8,18 +8,27 @@
     >
       <v-flex
         xs12
-        sm3
+        sm4
         d-flex
         v-for="(feature, i) in features"
         :key="i"
       >
-        <v-card :class="['mi--' + i]" flat tile dark class="grey darken-3 elevation-1">
+        <v-card
+          :class="mobile ? '' : 'mi--' + i"
+          flat
+          tile
+          dark
+          class="grey darken-3 elevation-1 pointer"
+          @mouseover="hoverIn" @mouseout="hoverOut"
+          :to="item"
+        >
           <v-card-media
+
             :src="`/static/img/${feature.img}.jpg`"
             :height="cardHeight"
           />
-          <v-card-title class="title" v-text="feature.title" />
-          <v-card-text v-text="feature.text" />
+          <v-card-title class="title pt-5 text-lg-center" v-text="feature.title"/>
+          <v-card-text class="pb-5" v-text="feature.text"/>
         </v-card>
       </v-flex>
     </v-layout>
@@ -27,9 +36,50 @@
 </template>
 
 <script>
+  import TweenMax from 'gsap'
+
   export default {
     name: 'alpha-card-feature',
-
+    computed: {
+      mobile () {
+        console.log(this.$vuetify.breakpoint.xsOnly + ' ' + this.$vuetify.breakpoint.name)
+        return this.$vuetify.breakpoint.xsOnly
+      },
+      item () {
+        let $this = this
+        let items = $this.$t('Layout.View.items')
+        let match = items.find((item) => {
+          return $this.features.find((feature) => {
+            console.log(feature.name + ' : ' + item.text)
+            return feature.name === item.text
+          })
+        })
+        console.log('Match: ' + match)
+        return match.to
+      },
+      imageHeight () {
+        switch (this.$vuetify.breakpoint.name) {
+          case 'xs':
+            return '220px'
+          case 'sm':
+            return '400px'
+          case 'md':
+            return '500px'
+          case 'lg':
+            return '600px'
+          case 'xl':
+            return '800px'
+        }
+      }
+    },
+    methods: {
+      hoverIn (e) {
+        TweenMax.to(e.currentTarget, 0.3, {y: -10})
+      },
+      hoverOut (e) {
+        TweenMax.to(e.currentTarget, 0.3, {y: 0})
+      }
+    },
     props: {
       cardHeight: {
         type: String,
@@ -43,16 +93,19 @@
   }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
   .mi--0
     position: relative;
     margin-top 2em;
+
   .mi--1
     position relative
     margin-top 0em;
+
   .mi--2
     position: relative;
     margin-top 6em;
+
   .container.grid-list-xl .layout .flex
     padding 0
 
