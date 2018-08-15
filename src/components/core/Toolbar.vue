@@ -58,7 +58,7 @@
 
 <style lang="stylus">
   .z20
-    z-index 20
+    z-index 20 !important
   .toolbar-logo
     height: 90%
   .highlight

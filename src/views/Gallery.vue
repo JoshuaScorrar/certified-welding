@@ -2,7 +2,7 @@
   <v-container fill-height>
     <v-layout justify-center align-center>
       <v-flex xs12 lg10 class="mb-5">
-        <alpha-gallery
+        <alpha-images
           :categories="categories"
           :projects="projects"
         />

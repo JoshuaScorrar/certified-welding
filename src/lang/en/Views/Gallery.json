@@ -21,7 +21,7 @@
       "filter": 2
     },
     {
-      "text": "Transport",
+      "text": "Vehicles",
       "filter": 3
     },
     {
@@ -31,6 +31,14 @@
     {
       "text": "Pumps",
       "filter": 5
+    },
+    {
+      "text": "Structural",
+      "filter": 6
+    },
+    {
+      "text": "Stairs",
+      "filter": 7
     }
   ],
   "projects": [
@@ -38,31 +46,30 @@
       "name": "concrete-mould-a",
       "img": "cert-weld/concrete-mould/a.jpg",
       "categories": [
-        4,
-        3
+        4
       ]
     },
     {
       "name": "concrete-mould-b",
       "img": "cert-weld/concrete-mould/b.jpg",
       "categories": [
-        4,
-        3
+        4
       ]
     },
     {
       "name": "concrete-mould-c",
       "img": "cert-weld/concrete-mould/c.jpg",
       "categories": [
-        2,
-        4
+        4,
+        2
       ]
     },
     {
       "name": "concrete-mould-d",
       "img": "cert-weld/concrete-mould/d.jpg",
       "categories": [
-        4
+        4,
+        2
       ]
     },
     {
@@ -145,16 +152,14 @@
       "name": "narek-b",
       "img": "cert-weld/narek/b.jpg",
       "categories": [
-        1,
-        3
+        1
       ]
     },
     {
       "name": "narek-c",
       "img": "cert-weld/narek/c.jpg",
       "categories": [
-        1,
-        3
+        1
       ]
     },
     {
@@ -162,7 +167,7 @@
       "img": "cert-weld/narek/d.jpg",
       "categories": [
         1,
-        3
+        6
       ]
     },
     {
@@ -170,62 +175,58 @@
       "img": "cert-weld/stairs/a.jpg",
       "categories": [
         1,
-        3
+        7
       ]
     },
     {
       "name": "stairs-b",
       "img": "cert-weld/stairs/b.jpg",
       "categories": [
-        1,
-        3
+        2,
+        7
       ]
     },
     {
       "name": "stairs-c",
       "img": "cert-weld/stairs/c.jpg",
       "categories": [
-        1,
-        3
+        2,
+        7
       ]
     },
     {
       "name": "structural-steel-a",
       "img": "cert-weld/structural-steel/a.jpg",
       "categories": [
-        1,
-        3
+        6
       ]
     },
     {
       "name": "structural-steel-b",
       "img": "cert-weld/structural-steel/b.jpg",
       "categories": [
-        1,
-        3
+        6
       ]
     },
     {
       "name": "structural-steel-c",
       "img": "cert-weld/structural-steel/c.jpg",
       "categories": [
-        1,
-        3
+        6
       ]
     },
     {
       "name": "structural-steel-d",
       "img": "cert-weld/structural-steel/d.jpg",
       "categories": [
-        1,
-        3
+        6
       ]
     },
     {
       "name": "transport-a",
       "img": "cert-weld/transport/a.jpg",
       "categories": [
-        1,
+        2,
         3
       ]
     },
@@ -233,7 +234,7 @@
       "name": "transport-b",
       "img": "cert-weld/transport/b.jpg",
       "categories": [
-        1,
+        2,
         3
       ]
     },
@@ -241,7 +242,7 @@
       "name": "transport-c",
       "img": "cert-weld/transport/c.jpg",
       "categories": [
-        1,
+        2,
         3
       ]
     }
