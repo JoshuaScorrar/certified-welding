@@ -127,33 +127,31 @@
   }
 </script>
 
-<style>
-  .v-btn--top.v-btn--absolute.v-btn--small{
-    top: 20px;
-    right: 20px;
-  }
-  .gallery-card {
-    transform-origin: center center 0;
-    transition: .3s cubic-bezier(.25,.8,.50,1);
-  }
-  .v-tabs__bar {
-    background-color: transparent !important;
-  }
+<style lang="stylus">
+  .v-carousel .v-btn--top.v-btn--absolute.v-btn--small
+    top: 20px
+    right: 20px
+
+  .gallery-card
+    transform-origin: center center 0
+    transition: .3s cubic-bezier(.25,.8,.50,1)
+
+  .v-tabs__bar
+    background-color: transparent !important
+
   .fade-transition-leave,
   .fade-transition-leave-active,
-  .fade-transition-leave-to {
+  .fade-transition-leave-to
     display: none;
-  }
-  .v-carousel{
-    height: 70vh;
-  }
-  .v-jumbotron__image{
-    height: 100%;
-    min-width: auto;
-    z-index: 0;
-  }
-  .v-jumbotron__background{
-    z-index: -1;
-    background: rgba(30,30,30, 1);
-  }
+
+  .v-carousel
+    height: 70vh
+    .v-jumbotron__image
+      height: 100%
+      min-width: auto
+      z-index: 0
+    .v-jumbotron__background
+      z-index: -1
+      background: rgba(30,30,30, 1)
+
 </style>
