@@ -42,7 +42,6 @@
     name: 'alpha-card-feature',
     computed: {
       mobile () {
-        console.log(this.$vuetify.breakpoint.xsOnly + ' ' + this.$vuetify.breakpoint.name)
         return this.$vuetify.breakpoint.xsOnly
       },
       item () {

@@ -7,12 +7,24 @@
     "static/img/welding/3.jpg",
     "static/img/welding/4.jpg"
   ],
-  "heading1": "We'd Love to Hear From You!",
-  "headingText1": "To find out more about what we can do for you, call or email us; otherwise fill out and submit the form below :)",
+  "heading1": "We'd like to hear from you so get in touch today!",
+  "headingText1": "To find out more about what we can do; call, email or fill out the form below :)",
   "phone": "092747154",
   "address": "16 Ormiston road, East Tamaki",
   "cityState": "Auckland",
   "zip": "2019",
+  "map": {
+    "zoom": 17,
+    "center": {
+      "lat": -36.9611,
+      "lng": 174.8922137
+    },
+    "markers": [
+      {
+        "title": "Certified Welding"
+      }
+    ]
+  },
   "people": [
     {
       "name": "Geoff Smith",

@@ -164,6 +164,12 @@
   .v-dialog:not(.v-dialog--fullscreen).v-dialog--active
     height: 70%;
 
+  .v-dialog
+    .v-carousel
+      height 100%
+  /*height initial*/
+      /*height: auto*/
+
   .v-carousel
     height: 100%
     .btn-wrapper
@@ -173,6 +179,7 @@
       right 20px
     .v-jumbotron__image
       height 100%
+      max-height 900px
       max-width 1600px
       min-width auto
       z-index 0

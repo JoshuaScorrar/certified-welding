@@ -1,7 +1,7 @@
 <template>
   <video-bg
     class="vh"
-    :sources="[heroVideo]" img="demo/assets/bg.jpg">
+    :sources="[heroVideo]" :img="heroImage">
     <div class="z0 bg-gradient"></div>
     <v-fade-transition origin="top center 0.1" mode="out-in">
     <v-container
@@ -41,7 +41,16 @@
         return this.$t(`Views.${this.namespace}.jumbotronTitle`)
       },
       heroImage () {
-        return `/static/img/welding/${this.namespace.toLowerCase()}-bw.jpg`
+        let path = '/static/video/'
+        let size = ''
+        let name = 'top-a-'
+        let bp = this.$vuetify.breakpoint
+        if (bp.smAndDown) {
+          size = '768'
+        } else {
+          size = '1280'
+        }
+        return path + name + size + '.jpg'
       },
       heroVideo () {
         let path = '/static/video/'
