@@ -96,9 +96,9 @@
 
   export default {
     metaInfo: {
-      title: 'Vuetify Alpha',
+      title: 'Certified Welding',
       meta: [
-        {name: 'description', content: 'Customized vue-cli templates for Vue and Vuetify'}
+        {name: 'description', content: 'Serious Welding for serious projects, from structural steel to concrete moulds, we do it all.'}
       ]
     },
     mounted () {

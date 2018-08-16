@@ -41,24 +41,28 @@
       "filter": 7
     }
   ],
+  "path": "static/img/cert-weld/",
   "projects": [
     {
       "name": "concrete-mould-a",
-      "img": "cert-weld/concrete-mould/a.jpg",
+      "path": "concrete-mould/",
+      "img": "a.jpg",
       "categories": [
         4
       ]
     },
     {
       "name": "concrete-mould-b",
-      "img": "cert-weld/concrete-mould/b.jpg",
+      "path": "concrete-mould/",
+      "img": "b.jpg",
       "categories": [
         4
       ]
     },
     {
       "name": "concrete-mould-c",
-      "img": "cert-weld/concrete-mould/c.jpg",
+      "path": "concrete-mould/",
+      "img": "c.jpg",
       "categories": [
         4,
         2
@@ -66,7 +70,8 @@
     },
     {
       "name": "concrete-mould-d",
-      "img": "cert-weld/concrete-mould/d.jpg",
+      "path": "concrete-mould/",
+      "img": "d.jpg",
       "categories": [
         4,
         2
@@ -74,7 +79,8 @@
     },
     {
       "name": "concrete-mould-e",
-      "img": "cert-weld/concrete-mould/e.jpg",
+      "path": "concrete-mould/",
+      "img": "e.jpg",
       "categories": [
         2,
         4
@@ -82,7 +88,8 @@
     },
     {
       "name": "concrete-pumps-a",
-      "img": "cert-weld/concrete-pumps/a.jpg",
+      "path": "concrete-pumps/",
+      "img": "a.jpg",
       "categories": [
         3,
         5
@@ -90,7 +97,8 @@
     },
     {
       "name": "concrete-pumps-b",
-      "img": "cert-weld/concrete-pumps/b.jpg",
+      "path": "concrete-pumps/",
+      "img": "b.jpg",
       "categories": [
         3,
         5
@@ -98,7 +106,8 @@
     },
     {
       "name": "concrete-pumps-c",
-      "img": "cert-weld/concrete-pumps/c.jpg",
+      "path": "concrete-pumps/",
+      "img": "c.jpg",
       "categories": [
         3,
         5
@@ -106,7 +115,8 @@
     },
     {
       "name": "concrete-pumps-d",
-      "img": "cert-weld/concrete-pumps/d.jpg",
+      "path": "concrete-pumps/",
+      "img": "d.jpg",
       "categories": [
         3,
         5
@@ -114,7 +124,8 @@
     },
     {
       "name": "concrete-pumps-e",
-      "img": "cert-weld/concrete-pumps/e.jpg",
+      "path": "concrete-pumps/",
+      "img": "e.jpg",
       "categories": [
         3,
         5
@@ -122,49 +133,56 @@
     },
     {
       "name": "h-and-b-a",
-      "img": "cert-weld/h-and-b/a.jpg",
+      "path": "h-and-b/",
+      "img": "a.jpg",
       "categories": [
         1
       ]
     },
     {
       "name": "h-and-b-b",
-      "img": "cert-weld/h-and-b/b.jpg",
+      "path": "h-and-b/",
+      "img": "b.jpg",
       "categories": [
         1
       ]
     },
     {
       "name": "h-and-b-c",
-      "img": "cert-weld/h-and-b/c.jpg",
+      "path": "h-and-b/",
+      "img": "c.jpg",
       "categories": [
         1
       ]
     },
     {
       "name": "narek-a",
-      "img": "cert-weld/narek/a.jpg",
+      "path": "narek/",
+      "img": "a.jpg",
       "categories": [
         1
       ]
     },
     {
       "name": "narek-b",
-      "img": "cert-weld/narek/b.jpg",
+      "path": "narek/",
+      "img": "b.jpg",
       "categories": [
         1
       ]
     },
     {
       "name": "narek-c",
-      "img": "cert-weld/narek/c.jpg",
+      "path": "narek/",
+      "img": "c.jpg",
       "categories": [
         1
       ]
     },
     {
       "name": "narek-d",
-      "img": "cert-weld/narek/d.jpg",
+      "path": "narek/",
+      "img": "d.jpg",
       "categories": [
         1,
         6
@@ -172,7 +190,8 @@
     },
     {
       "name": "stairs-a",
-      "img": "cert-weld/stairs/a.jpg",
+      "path": "stairs/",
+      "img": "a.jpg",
       "categories": [
         1,
         7
@@ -180,7 +199,8 @@
     },
     {
       "name": "stairs-b",
-      "img": "cert-weld/stairs/b.jpg",
+      "path": "stairs/",
+      "img": "b.jpg",
       "categories": [
         2,
         7
@@ -188,7 +208,8 @@
     },
     {
       "name": "stairs-c",
-      "img": "cert-weld/stairs/c.jpg",
+      "path": "stairs/",
+      "img": "c.jpg",
       "categories": [
         2,
         7
@@ -196,35 +217,40 @@
     },
     {
       "name": "structural-steel-a",
-      "img": "cert-weld/structural-steel/a.jpg",
+      "path": "structural-steel/",
+      "img": "a.jpg",
       "categories": [
         6
       ]
     },
     {
       "name": "structural-steel-b",
-      "img": "cert-weld/structural-steel/b.jpg",
+      "path": "structural-steel/",
+      "img": "b.jpg",
       "categories": [
         6
       ]
     },
     {
       "name": "structural-steel-c",
-      "img": "cert-weld/structural-steel/c.jpg",
+      "path": "structural-steel/",
+      "img": "c.jpg",
       "categories": [
         6
       ]
     },
     {
       "name": "structural-steel-d",
-      "img": "cert-weld/structural-steel/d.jpg",
+      "path": "structural-steel/",
+      "img": "d.jpg",
       "categories": [
         6
       ]
     },
     {
       "name": "transport-a",
-      "img": "cert-weld/transport/a.jpg",
+      "path": "transport/",
+      "img": "a.jpg",
       "categories": [
         2,
         3
@@ -232,7 +258,8 @@
     },
     {
       "name": "transport-b",
-      "img": "cert-weld/transport/b.jpg",
+      "path": "transport/",
+      "img": "b.jpg",
       "categories": [
         2,
         3
@@ -240,7 +267,8 @@
     },
     {
       "name": "transport-c",
-      "img": "cert-weld/transport/c.jpg",
+      "path": "transport/",
+      "img": "c.jpg",
       "categories": [
         2,
         3

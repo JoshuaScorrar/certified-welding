@@ -7,11 +7,25 @@
     "static/img/welding/3.jpg",
     "static/img/welding/4.jpg"
   ],
-  "heading1": "We\"d Love to Hear From You!",
-  "headingText1": "To request more informaiton, please fill out and submit the form below",
-  "phone": "(561) 284 - 5555",
-  "address": "555 Main Street",
-  "cityState": "Boca Raton, FL",
-  "zip": "33555",
+  "heading1": "We'd Love to Hear From You!",
+  "headingText1": "To find out more about what we can do for you, call or email us; otherwise fill out and submit the form below :)",
+  "phone": "092747154",
+  "address": "16 Ormiston road, East Tamaki",
+  "cityState": "Auckland",
+  "zip": "2019",
+  "people": [
+    {
+      "name": "Geoff Smith",
+      "title": "Managing Director",
+      "mobile": "+64 022 043 1224",
+      "email": "geoff@certweld.co.nz"
+    },
+    {
+      "name": "Wayne Oswald",
+      "title": "Administration Manager",
+      "mobile": "+64 021 622 875",
+      "email": "admin@certweld.co.nz"
+    }
+  ],
   "submit": "Submit"
 }

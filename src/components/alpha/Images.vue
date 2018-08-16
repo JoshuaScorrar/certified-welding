@@ -1,26 +1,39 @@
 <template>
   <div class="alpha-gallery">
-    <v-dialog v-if="dialog" v-model="dialog" max-width="90%">
+    <v-dialog class="image-viewer" :fullscreen="fullscreen" v-if="project" v-model="dialog" max-width="90%">
       <v-carousel
-        height="80vh"
         :hide-delimiters="true"
+        :cycle="false"
         :value="projectIndex">
-        <v-btn
-          dark
-          small
-          absolute
-          top
-          fab
-          right
-          mt5
-          @click.native="dialog = false"
-        >
-          <v-icon>clear</v-icon>
-        </v-btn>
+        <div class="btn-wrapper">
+          <v-btn
+            light
+            small
+            top
+            fab
+            right
+            mt5
+            class="v-btn-full"
+            @click.native="fullscreen = !fullscreen"
+          >
+            <v-icon>{{!fullscreen ? 'fullscreen' : 'fullscreen_exit'}}</v-icon>
+          </v-btn>
+          <v-btn
+            light
+            small
+            top
+            fab
+            right
+            mt5
+            @click.native="dialog = !dialog"
+          >
+            <v-icon>clear</v-icon>
+          </v-btn>
+        </div>
         <v-carousel-item
           v-for="(pro, i) in computedProjects"
           :key="i"
-          :src="`/static/img/${pro.img}`"
+          :src="path + pro.path + pro.img"
         ></v-carousel-item>
       </v-carousel>
       <!--<v-card>-->
@@ -50,11 +63,13 @@
         style="min-height: 450px"
       >
         <v-flex
-          xs12
-          md6
+          xs6
+          sm4
+          md4
           lg3
+          xl2
           v-for="(project, j) in computedProjects"
-          :key="project.img"
+          :key="project.name"
           gallery-card
           @click="genAction(project, j)"
         >
@@ -66,9 +81,8 @@
             height="200px"
             hover
             class="white--text"
-            :img="`/static/img/${project.img}`"
+            :img="path + project.path + 'thumbs/' + project.img"
             slot="activator"
-
             v-else
           >
           </v-card>
@@ -87,7 +101,9 @@
       category: null,
       dialog: false,
       project: false,
-      projectIndex: 0
+      projectIndex: 0,
+      fullscreen: true,
+      path: 'static/img/cert-weld/'
     }),
 
     props: {
@@ -128,9 +144,6 @@
 </script>
 
 <style lang="stylus">
-  .v-carousel .v-btn--top.v-btn--absolute.v-btn--small
-    top: 20px
-    right: 20px
 
   .gallery-card
     transform-origin: center center 0
@@ -144,14 +157,31 @@
   .fade-transition-leave-to
     display: none;
 
+  .image-viewer
+    /*min-height: 500px*/
+    /*height: 70vh*/
+
+  .v-dialog:not(.v-dialog--fullscreen).v-dialog--active
+    height: 70%;
+
   .v-carousel
-    height: 70vh
+    height: 100%
+    .btn-wrapper
+      position absolute
+      z-index 10
+      top 20px
+      right 20px
     .v-jumbotron__image
-      height: 100%
-      min-width: auto
-      z-index: 0
+      height 100%
+      max-width 1600px
+      min-width auto
+      z-index 0
     .v-jumbotron__background
-      z-index: -1
-      background: rgba(30,30,30, 1)
+      z-index -1
+      background rgba(30,30,30, 1)
+
+    .xs-12 .v-carousel
+      height auto
+      max-width 100%
 
 </style>

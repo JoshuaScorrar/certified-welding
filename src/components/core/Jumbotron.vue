@@ -1,6 +1,4 @@
 <template>
-
-
   <video-bg
     class="vh"
     :sources="[heroVideo]" img="demo/assets/bg.jpg">
@@ -11,13 +9,9 @@
       fill-width
       :key="$route.path"
       v-if="isBooted"
-      class="z5"
-
+      class="z3"
     >
-
-
-
-      <v-layout align-center class="z10">
+      <v-layout align-center class="z4">
         <v-flex
           text-xs-center
           :key="$route.path"
@@ -25,7 +19,6 @@
           <h1 class="white--text" v-html="title"/>
         </v-flex>
       </v-layout>
-
     </v-container>
     </v-fade-transition>
   </video-bg>
@@ -47,14 +40,32 @@
       title () {
         return this.$t(`Views.${this.namespace}.jumbotronTitle`)
       },
-      subTitle () {
-        return this.$t(`Views.${this.namespace}.jumbotronSubTitle`)
-      },
       heroImage () {
         return `/static/img/welding/${this.namespace.toLowerCase()}-bw.jpg`
       },
       heroVideo () {
-        return `/static/video/7.mp4`
+        let path = '/static/video/'
+        let size = ''
+        let name = 'top-a-'
+        let ext = '.mp4'
+        switch (this.$vuetify.breakpoint.name) {
+          case 'xs':
+            size = '480'
+            break
+          case 'sm':
+            size = '768'
+            break
+          case 'md':
+            size = '1024'
+            break
+          case 'lg':
+            size = '1280'
+            break
+          case 'xl':
+            size = '1920'
+            break
+        }
+        return path + name + size + ext
       }
     },
 
@@ -86,11 +97,11 @@
     /*background: -webkit-linear-gradient(top, rgba(0,0,0,0.89) 0%,rgba(255,255,255,0.85) 76%,rgba(255,255,255,1) 100%); !* Chrome10-25,Safari5.1-6 *!*/
     background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%,rgba(103, 103, 103, 0.6) 59%,rgba(197, 197, 197, 0.73) 84%,rgba(255,255,255,1) 100%);
 
-  .z10
-    z-index 10
+  .z4
+    z-index 4
 
-  .z5
-    z-index 5
+  .z3
+    z-index 3
 
   .fill-width
     width 100%

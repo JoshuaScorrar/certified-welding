@@ -13,7 +13,6 @@
   import '../../plugins/particles'
   import TweenMax from 'gsap'
   const particlesJS = window.particlesJS
-  let pJS
 
   export default {
     metaInfo () {
@@ -25,7 +24,7 @@
       $route (to, from) {
         TweenMax.set('#particles-js', {autoAlpha: 0})
         setTimeout(() => {
-          pJS.fn.reset()
+          window.pJSDom[0].pJS.fn.reset()
           TweenMax.to('#particles-js', 0.4, {autoAlpha: 1})
         }, 1000)
       }
@@ -34,7 +33,6 @@
       setTimeout(() => {
         particlesJS.load('particles-js', 'static/assets/particles.json', function () {
           console.log('callback - particles-js config loaded')
-          pJS = window.pJSDom[0].pJS
         })
       }, 500)
     }

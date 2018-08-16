@@ -27,7 +27,7 @@
             :src="`/static/img/${feature.img}.jpg`"
             :height="cardHeight"
           />
-          <v-card-title class="title pt-5 text-lg-center" v-text="feature.title"/>
+          <v-card-title class="title text-lg-center" v-text="feature.title"/>
           <v-card-text class="pb-5" v-text="feature.text"/>
         </v-card>
       </v-flex>
@@ -54,22 +54,7 @@
             return feature.name === item.text
           })
         })
-        console.log('Match: ' + match)
         return match.to
-      },
-      imageHeight () {
-        switch (this.$vuetify.breakpoint.name) {
-          case 'xs':
-            return '220px'
-          case 'sm':
-            return '400px'
-          case 'md':
-            return '500px'
-          case 'lg':
-            return '600px'
-          case 'xl':
-            return '800px'
-        }
       }
     },
     methods: {
