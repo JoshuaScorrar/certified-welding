@@ -41,7 +41,7 @@
         return this.$t(`Views.${this.namespace}.jumbotronTitle`)
       },
       heroImage () {
-        let path = '/static/video/'
+        let path = '/static/img/'
         let size = ''
         let name = 'top-a-'
         let bp = this.$vuetify.breakpoint
@@ -97,6 +97,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    pointer-events none
     /*background: linear-gradient(to bottom,*/
     /*rgba(50, 50, 50, 0.8),*/
     /*rgba(75, 75, 75, 0.8),*/

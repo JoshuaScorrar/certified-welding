@@ -49,7 +49,6 @@
         let items = $this.$t('Layout.View.items')
         let match = items.find((item) => {
           return $this.features.find((feature) => {
-            console.log(feature.name + ' : ' + item.text)
             return feature.name === item.text
           })
         })
