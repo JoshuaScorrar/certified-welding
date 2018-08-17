@@ -8,10 +8,10 @@
 
     <core-view />
 
-    <core-footer />
-
+    <core-mfooter />
   </v-app>
 </template>
+
 <style lang="stylus">
   .pointer
     cursor pointer

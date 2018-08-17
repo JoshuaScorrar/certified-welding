@@ -25,7 +25,7 @@
             fab
             right
             mt5
-            @click.native="dialog = !dialog"
+            @click.native="dialog = false"
           >
             <v-icon>clear</v-icon>
           </v-btn>
@@ -93,7 +93,8 @@
 </template>
 
 <script>
-  import TweenMax from 'gsap'
+  /* eslint-disable no-undef */
+
   export default {
     name: 'alpha-gallery',
 
@@ -175,8 +176,11 @@
     .btn-wrapper
       position absolute
       z-index 10
-      top 20px
-      right 20px
+      top 0.5em
+      right 0.5em
+      .v-btn
+        top 0 !important
+        right 0 !important
     .v-jumbotron__image
       height 100%
       max-height 900px

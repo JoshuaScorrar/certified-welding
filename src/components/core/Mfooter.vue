@@ -3,6 +3,7 @@
     :company="$t('Layout.Footer.company')"
     :social="social"
     :categories="categories"
+    :contact="contact"
   >
     <span >
       &copy; 2018
@@ -18,6 +19,9 @@
     computed: {
       social () {
         return this.$t('Layout.Footer.social')
+      },
+      contact () {
+        return this.$t('Views.Contact')
       },
       categories () {
         return this.$t('Layout.Footer.categories')

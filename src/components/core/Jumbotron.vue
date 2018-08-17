@@ -1,25 +1,27 @@
 <template>
   <video-bg
+    id="jumbotron"
     class="vh"
     :sources="[heroVideo]" :img="heroImage">
     <div class="z0 bg-gradient"></div>
     <v-fade-transition origin="top center 0.1" mode="out-in">
-    <v-container
-      fill-height
-      fill-width
-      :key="$route.path"
-      v-if="isBooted"
-      class="z3"
-    >
-      <v-layout align-center class="z4">
-        <v-flex
-          text-xs-center
-          :key="$route.path"
-        >
-          <h1 class="white--text" v-html="title"/>
-        </v-flex>
-      </v-layout>
-    </v-container>
+      <v-container
+        fill-height
+        fill-width
+        :key="$route.path"
+        v-if="isBooted"
+        class="z3"
+      >
+        <v-layout align-center class="z4">
+          <v-flex
+            text-xs-center
+            :key="$route.path"
+          >
+            <h1 class="white--text" v-html="title"/>
+            <h2 class="white--text" v-html="subTitle"/>
+          </v-flex>
+        </v-layout>
+      </v-container>
     </v-fade-transition>
   </video-bg>
 </template>
@@ -39,6 +41,9 @@
       },
       title () {
         return this.$t(`Views.${this.namespace}.jumbotronTitle`)
+      },
+      subTitle () {
+        return this.$t(`Views.${this.namespace}.jumbotronSubTitle`)
       },
       heroImage () {
         let path = '/static/img/'
@@ -91,6 +96,9 @@
     font-weight bold
     font-size 60px
 
+  h2
+    font-weight 300
+
   .bg-gradient
     width: 100%;
     height: 100%;
@@ -117,6 +125,6 @@
     width 100%
 
   .vh
-    height 70vh !important
+    height 65vh !important
 
 </style>

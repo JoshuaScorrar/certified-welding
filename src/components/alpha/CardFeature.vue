@@ -1,5 +1,5 @@
 <template>
-  <v-container grid-list-xl pa-0>
+  <v-container grid-list-lg pa-0>
     <v-layout
       row
       wrap
@@ -9,6 +9,7 @@
       <v-flex
         xs12
         sm4
+        md4
         d-flex
         v-for="(feature, i) in features"
         :key="i"
@@ -18,17 +19,24 @@
           flat
           tile
           dark
-          class="grey darken-3 elevation-1 pointer"
-          @mouseover="hoverIn" @mouseout="hoverOut"
-          :to="item"
+          class="grey darken-3 elevation-1"
+          @mouseover="hoverIn"
+          @mouseout="hoverOut"
         >
           <v-card-media
-
             :src="`/static/img/${feature.img}.jpg`"
             :height="cardHeight"
           />
-          <v-card-title class="title text-lg-center" v-text="feature.title"/>
-          <v-card-text class="pb-5" v-text="feature.text"/>
+          <v-flex pa-4>
+          <v-card-title class="title text-lg-center pa-0 mb-3" v-text="feature.title"/>
+          <v-card-text class="pa-0 mb-2" v-text="feature.text"/>
+          <v-card-text class="pa-0 pb-5" v-text="feature.subText"/>
+          <v-card-actions class="pa-0">
+            <v-btn @click="direct(feature)">
+              {{feature.callToAction}}
+            </v-btn>
+          </v-card-actions>
+          </v-flex>
         </v-card>
       </v-flex>
     </v-layout>
@@ -36,26 +44,25 @@
 </template>
 
 <script>
-  import TweenMax from 'gsap'
+  /* eslint-disable no-undef */
 
   export default {
     name: 'alpha-card-feature',
+    data () {
+      return {
+        items: this.$t('Layout.View.items')
+      }
+    },
     computed: {
       mobile () {
         return this.$vuetify.breakpoint.xsOnly
-      },
-      item () {
-        let $this = this
-        let items = $this.$t('Layout.View.items')
-        let match = items.find((item) => {
-          return $this.features.find((feature) => {
-            return feature.name === item.text
-          })
-        })
-        return match.to
       }
     },
+
     methods: {
+      direct (item) {
+        this.$router.push(this.items.find((i) => i.text === item.name).to)
+      },
       hoverIn (e) {
         TweenMax.to(e.currentTarget, 0.3, {y: -10})
       },
@@ -66,7 +73,7 @@
     props: {
       cardHeight: {
         type: String,
-        default: '200px'
+        default: '300px'
       },
       features: {
         type: Array,
@@ -87,9 +94,23 @@
 
   .mi--2
     position: relative;
-    margin-top 6em;
+    margin-top 4em;
 
-  .container.grid-list-xl .layout .flex
+  .container.grid-list-lg .layout .flex
     padding 0
 
+  .v-card__text
+    font-weight 100
+
+  .bg-gradient
+    position absolute
+    width 100%
+    height 100%
+    background linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(117,117,117,0.25) 50%,
+      rgba(0, 0, 0, 0.5) 100%
+    )
+    z-index 2
 </style>

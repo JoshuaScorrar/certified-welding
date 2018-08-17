@@ -3,7 +3,7 @@
 
     <v-layout justify-space-between wrap>
 
-      <v-flex d-flex xs12 md8 class="pa-2">
+      <v-flex d-flex xs12 md7 class="pa-2">
 
         <v-card class="pa-4 translucent">
           <v-card-title v-text="contact.heading1" class="headline">
@@ -11,6 +11,12 @@
           </v-card-title>
           <v-card-title v-text="contact.headingText1" class="subheading">
 
+          </v-card-title>
+          <v-card-title class="subheading">
+            If you'd like to find us, check out the map below.
+            <v-icon color="primary" sm class="ml-2 pointer" @click="goToMap">
+              my_location
+            </v-icon>
           </v-card-title>
           <v-card-text>
             <v-text-field
@@ -34,7 +40,7 @@
           </v-card-actions>
         </v-card>
       </v-flex>
-      <v-flex d-flex xs12 sm6 md4 class="pa-2">
+      <v-flex d-flex xs12 sm6 md5 class="pa-2">
         <v-card class="pa-3 translucent">
           <v-flex>
             <v-card-media lg3>
@@ -49,21 +55,33 @@
             </v-card-title>
 
             <v-card-text>
-              <v-layout justify-start row fill-height>
+              <v-layout justify-start row>
                 <v-icon
                   sm
                 >phone
                 </v-icon>
-                <p class="ml-2" v-text="contact.phone">
-                </p>
+                <a class="ml-2 p-format" :href="'tel:' + contact.phone"  v-text="contact.phone">
+                </a>
               </v-layout>
-              <v-layout justify-start row fill-height>
+              <v-layout justify-start row>
                 <v-icon
                   sm
                 >home
                 </v-icon>
-                <p class="ml-2" v-text="contact.address">
+                <p class="ml-2 p-format" v-text="contact.address">
                 </p>
+              </v-layout>
+              <v-layout justify-start row>
+                <v-icon
+                  sm
+                >access_time
+                </v-icon>
+                <v-layout justify-start column>
+                <p class="ml-2 p-format" v-text="contact.hours.weekday">
+                </p>
+                <p class="ml-2 p-format" v-text="contact.hours.weekend">
+                </p>
+                </v-layout>
               </v-layout>
             </v-card-text>
             <v-card-title class="subheading">
@@ -73,48 +91,57 @@
               v-for="(person, i) in contact.people"
               :key="i"
             >
-              <v-layout justify-start row fill-height>
+              <v-layout justify-start row>
                 <v-icon
                   sm
                 >person_pin
                 </v-icon>
-                <p class="ml-2" v-text="person.name">
+                <p class="ml-2 p-format" v-text="person.name">
                 </p>
               </v-layout>
-              <v-layout justify-start row fill-height>
+              <v-layout justify-start row>
                 <v-icon
                   sm
                 >label
                 </v-icon>
-                <p class="ml-2" v-text="person.title">
+                <p class="ml-2 p-format" v-text="person.title">
                 </p>
               </v-layout>
-              <v-layout justify-start row fill-height>
+              <v-layout justify-start row>
                 <v-icon
                   sm
-                >phone
+                >smartphone
                 </v-icon>
-                <p class="ml-2" v-text="person.mobile">
-                </p>
+                <a
+                  class="ml-2 p-format"
+                  :href="'tel:' + person.mobile"
+                  v-text="person.mobile">
+                </a>
               </v-layout>
-              <v-layout justify-start row fill-height>
+              <v-layout
+                justify-start
+                row
+              >
                 <v-icon
                   sm
                 >email
                 </v-icon>
-                <p class="ml-2" v-text="person.email">
-                </p>
+                <a
+                  class="ml-2 p-format"
+                  :mailto="person.email"
+                  v-text="person.email">
+                </a>
               </v-layout>
             </v-card-text>
           </v-flex>
 
         </v-card>
       </v-flex>
-      <v-flex xs12 md12 class="pa-2">
-        <v-card class="pa-4 translucent">
+      <v-flex d-flex xs12 sm6 md12 class="pa-2" id="map">
+        <v-card class="translucent">
         <GmapMap
           :center="contact.map.center"
-          :zoom="17"
+          :zoom="13"
           map-type-id="terrain"
         >
           <GmapMarker
@@ -133,10 +160,19 @@
 </template>
 
 <script>
+  /* eslint-disable no-undef */
+
   export default {
     data () {
       return {
         contact: this.$t('Views.Contact')
+      }
+    },
+    methods: {
+      goToMap (e) {
+        let tar = document.getElementById('map')
+        let pos = tar.getBoundingClientRect()
+        TweenMax.to(window, 0.3, {scrollTo: {y: window.scrollY + pos.top - (pos.height / 2)}})
       }
     },
     metaInfo: {
@@ -155,9 +191,11 @@
 
   .vue-map-container
     width 100%
+    height 100%
     min-height 50vh
 
-
+  .p-format
+    margin-bottom: 8px
   .contact-pg
     .v-card__media img
       width initial

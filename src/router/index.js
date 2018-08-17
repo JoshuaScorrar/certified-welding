@@ -40,7 +40,16 @@ const router = new Router({
     if (to.hash) {
       return { selector: to.hash }
     }
-    return { x: 0, y: 0 }
+    let top = window.pageYOffset || document.documentElement.scrollTop
+    let jumbo = document.getElementById('jumbotron')
+    let height = jumbo.getBoundingClientRect().height
+    if (top > height) {
+      top = height - 100
+    }
+    return {
+      x: 0,
+      y: top
+    }
   }
 })
 

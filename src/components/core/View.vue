@@ -2,7 +2,7 @@
   <v-content>
     <div id="particles-js"></div>
     <v-fade-transition mode="out-in">
-      <router-view />
+      <router-view id="view" class="pt-5" />
     </v-fade-transition>
 
   </v-content>
@@ -10,8 +10,9 @@
 </template>
 
 <script>
+  /* eslint-disable no-undef */
+
   import '../../plugins/particles'
-  import TweenMax from 'gsap'
   const particlesJS = window.particlesJS
 
   export default {
@@ -31,9 +32,7 @@
     },
     mounted () {
       setTimeout(() => {
-        particlesJS.load('particles-js', 'static/assets/particles.json', function () {
-          console.log('callback - particles-js config loaded')
-        })
+        particlesJS.load('particles-js', 'static/assets/particles.json')
       }, 500)
     }
   }

@@ -24,7 +24,7 @@
 </template>
 
 <script>
-  import TweenMax from 'gsap'
+  /* eslint-disable no-undef */
 
   export default {
     props: {

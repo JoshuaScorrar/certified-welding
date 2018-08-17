@@ -7,14 +7,16 @@
         class="grey darken-3 fill-height"
       >
         <v-flex
+          md3
+          sm6
           xs12
-          sm3
-          class="pa-5 grey darken-4"
+          class="pa-4 grey darken-4"
         >
           <h5 class="title pb-3" v-text="company"/>
           <ul>
             <li v-for="(item, i) in computedSocial" :key="i">
-              <a :href="item.href" class="layout align-center">
+              <router-link :to="item.to" class="toolbar-logo">
+              <a class="layout align-center">
                 <v-icon
                   dark
                   class="mr-3"
@@ -22,19 +24,74 @@
                 />
                 <span class="subheading" v-text="item.text"/>
               </a>
+              </router-link>
             </li>
           </ul>
         </v-flex>
         <v-flex
-          xs12 sm3
-          class="pa-5"
+          md3
+          sm6
+          xs6
+          class="pa-4"
           v-for="(item, i) in categories"
           :key="i"
         >
-          <h5 class="title pb-3" v-text="item.text"/>
+          <h5 class="title pb-3" v-text="item.title"/>
           <ul>
             <li v-for="(n, i) in item.items" :key="i">
-              <a :href="n.href" v-text="n.text"/>
+              <a :to="n.href" v-text="n.text"/>
+            </li>
+          </ul>
+        </v-flex>
+        <v-flex
+          md3
+          sm6
+          xs12
+          class="pa-4 grey darken-4"
+        >
+          <h5 class="title pb-3">
+            Contact
+          </h5>
+          <ul>
+            <li>
+              <v-layout justify-start row>
+                <v-icon
+                  dark
+                  class="mr-3"
+                >
+                  phone
+                </v-icon>
+                <a class="p-format" :href="'tel:' + contact.phone" v-text="contact.phone">
+                </a>
+              </v-layout>
+            </li>
+            <li>
+              <v-layout justify-start row>
+                <v-icon
+                  dark
+                  class="mr-3"
+                >
+                  home
+                </v-icon>
+                <p class="p-format" v-text="contact.address">
+                </p>
+              </v-layout>
+            </li>
+            <li>
+              <v-layout justify-start row>
+                <v-icon
+                  dark
+                  class="mr-3"
+                >
+                  access_time
+                </v-icon>
+                <v-layout justify-start column>
+                  <p class="p-format" v-text="contact.hours.weekday">
+                  </p>
+                  <p class="p-format" v-text="contact.hours.weekend">
+                  </p>
+                </v-layout>
+              </v-layout>
             </li>
           </ul>
         </v-flex>
@@ -64,6 +121,11 @@
         default: () => ([])
       },
       company: String,
+
+      contact: {
+        type: Object,
+        default: () => ({})
+      },
       facebook: String,
       github: String,
       social: {
@@ -108,7 +170,12 @@
 </script>
 
 
-<style lang="stylus">
+<style lang="stylus" scoped>
+  .p-format
+    margin-bottom: 0;
+    display: block
+    line-height: 1.8
+
   .alpha-footer
     background: #303c42
     color: #fff
@@ -129,7 +196,6 @@
         margin-bottom: 10px
 
       a
-        color: #fff
         text-decoration: none
         transition: .2s ease-in
 

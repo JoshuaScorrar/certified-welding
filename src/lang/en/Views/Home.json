@@ -1,6 +1,6 @@
 {
-  "jumbotronTitle": "SERIOUS WELDING",
-  "jumbotronSubTitle": "Relentlessly advancing our clients\" visions, beyond their expectations",
+  "jumbotronTitle": "CERTIFIED WELDING",
+  "jumbotronSubTitle": "Relentlessly advancing our clients visions beyond their expectations.",
   "carouselImages": [
     "static/img/welding/1.jpg",
     "static/img/welding/2.jpg",
@@ -12,20 +12,26 @@
     {
       "name": "Projects",
       "title": "PROJECTS",
-      "text": "Certified Welding has worked on a variety of both big and small projects. We take pride in what we've put into the world, go and check them out!",
-      "img": "welding/weld-2"
+      "text": "Certified Welding has worked on a wide range of both big and small projects. We take pride in what we've put into the world",
+      "subText": "Have a look at what we've done!",
+      "img": "welding/projects",
+      "callToAction": "HAVE A LOOK"
     },
     {
       "name": "Services",
       "title": "SERVICES",
-      "text": "Concrete Moulds, Structural Steel, Transport and much much more. Certified Welding offers a wide range of services to achieve the vision of our clients.",
-      "img": "welding/weld-1"
+      "text": "Concrete Moulds, Structural Steel, Transport and much much more. Certified Welding offers a diverse set of skills and services.",
+      "subText": "Check out what we can do.",
+      "img": "welding/services",
+      "callToAction": "CHECK THEM OUT"
     },
     {
-      "name": "Gallery",
-      "title": "ABOUT",
-      "text": "The team at Certified Welding strives for excellence in the pursuit of your vision. Find out more about our values and the team!",
-      "img": "welding/weld-3"
+      "name": "Contact",
+      "title": "CONTACT",
+      "text": "Certified Welding can provide a wide variety of custom solutions to fit your needs.",
+      "subText": "To find out what we can do for you, get in touch with us today!",
+      "img": "welding/weld-3",
+      "callToAction": "GET IN TOUCH"
     }
   ],
   "testimonialsTitle": "Testimonials",

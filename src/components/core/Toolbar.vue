@@ -8,10 +8,11 @@
     v-scroll="onScroll"
     class="pt-1 pb-1 z20"
   >
-    <img
-      class="toolbar-logo"
-      src="/static/img/cert-weld-logo-ws-180w.png"
-    />
+    <router-link to="/" class="toolbar-logo">
+      <img
+        src="/static/img/cert-weld-logo-ws-180w.png"
+      />
+    </router-link>
     <v-spacer />
     <v-toolbar-items v-if="$vuetify.breakpoint.mdAndUp">
       <v-btn
@@ -48,6 +49,9 @@
 
     methods: {
       ...mapMutations('app', ['toggleDrawer']),
+      home () {
+        return this.$router.push('/')
+      },
       onScroll () {
         this.isScrolling = (window.pageYOffset ||
           document.documentElement.scrollTop || 0) > (this.$el.nextElementSibling.nextElementSibling.clientHeight - 100 || 100)
@@ -60,7 +64,14 @@
   .z20
     z-index 20 !important
   .toolbar-logo
-    height: 90%
+    cursor pointer
+    height 100%
+    img
+      height 90%
+
+  .v-btn
+    font-weight bold
+
   .highlight
     background rgba(246, 246, 246, 0.1)
   .a-highlight

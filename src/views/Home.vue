@@ -92,7 +92,7 @@
 </template>
 
 <script>
-  import TweenMax from 'gsap/TweenMax'
+  /* eslint-disable no-undef */
 
   export default {
     metaInfo: {

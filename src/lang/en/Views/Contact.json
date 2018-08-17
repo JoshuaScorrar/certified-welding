@@ -1,18 +1,23 @@
 {
-  "jumbotronTitle": "Contact Alpha Construction",
-  "jumbotronSubTitle": "Get in touch with our Support Staff",
+  "jumbotronTitle": "GET IN TOUCH",
+  "jumbotronSubTitle": "Our friendly team would like to hear from you so get in touch today!",
   "carouselImages": [
     "static/img/welding/1.jpg",
     "static/img/welding/2.jpg",
     "static/img/welding/3.jpg",
     "static/img/welding/4.jpg"
   ],
-  "heading1": "We'd like to hear from you so get in touch today!",
-  "headingText1": "To find out more about what we can do; call, email or fill out the form below :)",
+  "heading1": "Choose how you'd like to get in touch :)",
+  "headingText1": "To find out more about what we can do for you - call, email or fill out the form.",
+  "headingText2": "If you'd like to find us, check out the map below.",
   "phone": "092747154",
   "address": "16 Ormiston road, East Tamaki",
   "cityState": "Auckland",
   "zip": "2019",
+  "hours": {
+    "weekday": "Mon - Fri: 7:30am - 5:30pm",
+    "weekend": "Sat: 8:00am - 12:30pm"
+  },
   "map": {
     "zoom": 17,
     "center": {
@@ -29,13 +34,13 @@
     {
       "name": "Geoff Smith",
       "title": "Managing Director",
-      "mobile": "+64 022 043 1224",
+      "mobile": "+640220431224",
       "email": "geoff@certweld.co.nz"
     },
     {
       "name": "Wayne Oswald",
       "title": "Administration Manager",
-      "mobile": "+64 021 622 875",
+      "mobile": "+64021622875",
       "email": "admin@certweld.co.nz"
     }
   ],
