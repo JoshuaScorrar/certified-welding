@@ -1,6 +1,6 @@
 {
   "jumbotronTitle": "CERTIFIED WELDING",
-  "jumbotronSubTitle": "Relentlessly advancing our clients visions beyond their expectations.",
+  "jumbotronSubTitle": "Relentlessly engineering our clients visions beyond their expectations.",
   "carouselImages": [
     "static/img/welding/1.jpg",
     "static/img/welding/2.jpg",
@@ -14,14 +14,14 @@
       "title": "PROJECTS",
       "text": "Certified Welding has worked on a wide range of both big and small projects. We take pride in what we've put into the world",
       "subText": "Go and see what we've done!",
-      "img": "welding/projects",
+      "img": "welding/projects-1",
       "callToAction": "GO AND SEE"
     },
     {
       "name": "Services",
       "title": "SERVICES",
       "text": "Concrete Moulds, Structural Steel, Transport and much much more. Certified Welding offers a diverse set of skills and services.",
-      "subText": "Check out what we can do.",
+      "subText": "Check out what we can do!",
       "img": "welding/services-2",
       "callToAction": "CHECK THEM OUT"
     },
@@ -37,7 +37,7 @@
       "name": "Gallery",
       "title": "GALLERY",
       "text": "The team is proud of what we've engineered for past clients and have put them on here for you to see.",
-      "subText": "Have a look at what we're capable of.",
+      "subText": "Have a look at what we're capable of!",
       "img": "welding/gallery",
       "callToAction": "HAVE A LOOK"
     },
@@ -45,15 +45,15 @@
       "name": "About",
       "title": "ABOUT US",
       "text": "Here at Certified Welding, we strive for excellence in pursuing our clients visions.",
-      "subText": "Learn more about Certified Welding and what we care about.",
-      "img": "welding/about",
+      "subText": "Learn more about Certified Welding and what we care about!",
+      "img": "welding/about-2",
       "callToAction": "LEARN MORE"
     },
     {
       "name": "Community",
       "title": "COMMUNITY",
       "text": "Certified Welding believes it's important to give back to the community",
-      "subText": "Find out about what we do in our local community.",
+      "subText": "Find out about what we do in our local community!",
       "img": "welding/community",
       "callToAction": "FIND OUT"
     }

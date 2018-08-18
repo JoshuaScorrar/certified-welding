@@ -98,12 +98,8 @@
       margin-top 3em
       right 0.75em
 
-    .mi--1
+    .mi--1, mi--4
       margin-top 0
-      z-index 1
-
-    .mi--4
-      margin-top 5em
       z-index 1
 
     .mi--2, .mi--5

@@ -158,13 +158,26 @@
         </v-card>
       </v-flex>
     </v-layout>
+    <alpha-tag
+      :icon="'phone'"
+      :text="'Call us'"
+      :value="contact.phone"
+      :offset="'220px'"
+    ></alpha-tag>
+    <alpha-tag
+      :icon="'email'"
+      :text="'Email us'"
+      :value="contact.email"
+    ></alpha-tag>
   </v-container>
 </template>
 
 <script>
   /* eslint-disable no-undef */
 
+  import AlphaTag from '../components/alpha/Tag'
   export default {
+    components: {AlphaTag},
     data () {
       return {
         contact: this.$t('Views.Contact')

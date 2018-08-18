@@ -6,16 +6,11 @@
   ],
   "items": [
     {
-      "heading1": "Realtime Global Deployments",
-      "headingText1": "Te dolor consul mei, etiam molestie indoctum usu ad, qui inermis eleifend an. Pro iriure alienum incorrupte ex, cu diceret moderatius mei. Te corrumpit posidonium sit, in cum nonumy utamur. Usu impedit patrioque vituperatoribus ei, cu voluptua nominati philosophia mel. Sea at legendos percipitur, nulla dicant convenire ne duo. Veniam epicuri vis cu, ea pri alii ceteros fierent.",
+      "heading1": "Narek",
+      "headingText1": "Focus On What Drives Your Business",
       "heading2": "Focus On What Drives Your Business",
       "headingText2a": "Lorem ipsum dolor sit amet, ea mutat tation constituam per, mei error ocurreret definiebas ne. Te harum constituto inciderint his. Vis no delenit mediocritatem. His et debet possim perpetua, assum argumentum ne quo, constituto eloquentiam sea ne. Ne has ludus graecis fabellas.",
-      "images": [
-        "static/img/welding/1.jpg",
-        "static/img/welding/2.jpg",
-        "static/img/welding/3.jpg",
-        "static/img/welding/4.jpg"
-      ],
+      "image": "static/img/cert-weld/narek/c.jpg",
       "testimonial": {
         "author": "Jay Oakerson",
         "title": "CEO Abocado",
@@ -23,21 +18,42 @@
       }
     },
     {
-      "heading1": "Realtime Global Deployments",
-      "headingText1": "Te dolor consul mei, etiam molestie indoctum usu ad, qui inermis eleifend an. Pro iriure alienum incorrupte ex, cu diceret moderatius mei. Te corrumpit posidonium sit, in cum nonumy utamur. Usu impedit patrioque vituperatoribus ei, cu voluptua nominati philosophia mel. Sea at legendos percipitur, nulla dicant convenire ne duo. Veniam epicuri vis cu, ea pri alii ceteros fierent.",
+      "heading1": "Pumps",
+      "headingText1": "Focus On What Drives Your Business",
       "heading2": "Focus On What Drives Your Business",
       "headingText2a": "Lorem ipsum dolor sit amet, ea mutat tation constituam per, mei error ocurreret definiebas ne. Te harum constituto inciderint his. Vis no delenit mediocritatem. His et debet possim perpetua, assum argumentum ne quo, constituto eloquentiam sea ne. Ne has ludus graecis fabellas.",
-      "images": [
-        "static/img/welding/1.jpg",
-        "static/img/welding/2.jpg",
-        "static/img/welding/3.jpg",
-        "static/img/welding/4.jpg"
-      ],
+      "image": "static/img/cert-weld/concrete-pumps/a.jpg",
       "testimonial": {
         "author": "Jay Oakerson",
         "title": "CEO Abocado",
         "quote": "With Alpha Software powering all of our customer-facing services and ASCC, helping us monitor and understand application performance, Abocado is in great shape to create and release new products."
       }
+    },
+    {
+      "heading1": "Stairs",
+      "headingText1": "Focus On What Drives Your Business",
+      "heading2": "Focus On What Drives Your Business",
+      "headingText2a": "Lorem ipsum dolor sit amet, ea mutat tation constituam per, mei error ocurreret definiebas ne. Te harum constituto inciderint his. Vis no delenit mediocritatem. His et debet possim perpetua, assum argumentum ne quo, constituto eloquentiam sea ne. Ne has ludus graecis fabellas.",
+      "image": "static/img/cert-weld/stairs/b.jpg",
+      "testimonial": {
+        "author": "Jay Oakerson",
+        "title": "CEO Abocado",
+        "quote": "With Alpha Software powering all of our customer-facing services and ASCC, helping us monitor and understand application performance, Abocado is in great shape to create and release new products."
+      }
+    },
+    {
+      "heading1": "Hand Rails",
+      "headingText1": "Focus On What Drives Your Business",
+      "heading2": "Focus On What Drives Your Business",
+      "headingText2a": "Lorem ipsum dolor sit amet, ea mutat tation constituam per, mei error ocurreret definiebas ne. Te harum constituto inciderint his. Vis no delenit mediocritatem. His et debet possim perpetua, assum argumentum ne quo, constituto eloquentiam sea ne. Ne has ludus graecis fabellas.",
+      "image": "static/img/cert-weld/h-and-b/c.jpg"
+    },
+    {
+      "heading1": "Moulds",
+      "headingText1": "Focus On What Drives Your Business",
+      "heading2": "Focus On What Drives Your Business",
+      "headingText2a": "Lorem ipsum dolor sit amet, ea mutat tation constituam per, mei error ocurreret definiebas ne. Te harum constituto inciderint his. Vis no delenit mediocritatem. His et debet possim perpetua, assum argumentum ne quo, constituto eloquentiam sea ne. Ne has ludus graecis fabellas.",
+      "image": "static/img/cert-weld/concrete-mould/e.jpg"
     }
   ]
 }

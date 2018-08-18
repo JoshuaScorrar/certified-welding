@@ -39,9 +39,9 @@
 
           >
             <alpha-testimonial
-              :author="testimonials[2].author"
-              :title="testimonials[2].title"
-              :quote="testimonials[2].quote"
+              :author="testimonials[0].author"
+              :title="testimonials[0].title"
+              :quote="testimonials[0].quote"
             />
           </v-flex>
         </v-layout>

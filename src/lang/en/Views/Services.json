@@ -1,14 +1,35 @@
 {
   "jumbotronTitle": "WHAT WE DO",
   "jumbotronSubTitle": "Certified welding offers a wide range of engineering expertise.",
-  "carouselImages": [
-    "static/img/welding/1.jpg",
-    "static/img/welding/2.jpg",
-    "static/img/welding/3.jpg",
-    "static/img/welding/4.jpg"
-  ],
   "heading1": "Realtime Global Deployments",
-  "headingText1": "Te dolor consul mei, etiam molestie indoctum usu ad, qui inermis eleifend an. Pro iriure alienum incorrupte ex, cu diceret moderatius mei. Te corrumpit posidonium sit, in cum nonumy utamur. Usu impedit patrioque vituperatoribus ei, cu voluptua nominati philosophia mel. Sea at legendos percipitur, nulla dicant convenire ne duo. Veniam epicuri vis cu, ea pri alii ceteros fierent.",
-  "heading2": "Focus On What Drives Your Business",
-  "headingText2a": "Lorem ipsum dolor sit amet, ea mutat tation constituam per, mei error ocurreret definiebas ne. Te harum constituto inciderint his. Vis no delenit mediocritatem. His et debet possim perpetua, assum argumentum ne quo, constituto eloquentiam sea ne. Ne has ludus graecis fabellas."
+  "items": [
+    {
+      "heading1": "On Site Installations",
+      "headingText1": "Focus On What Drives Your Business",
+      "heading2": "Focus On What Drives Your Business",
+      "headingText2a": "Focus On What Drives Your Business",
+      "image": "static/img/cert-weld/narek/c.jpg"
+    },
+    {
+      "heading1": "Structural Steel",
+      "headingText1": "Focus On What Drives Your Business",
+      "heading2": "Focus On What Drives Your Business",
+      "headingText2a": "Lorem ipsum dolor sit amet, ea mutat tation constituam per, mei error ocurreret definiebas ne. Te harum constituto inciderint his. Vis no delenit mediocritatem. ",
+      "image": "static/img/cert-weld/structural-steel/a.jpg"
+    },
+    {
+      "heading1": "Concrete Moulds",
+      "headingText1": "Lorem ipsum dolor sit amet, ea mutat tation constituam per, mei error ocurreret definiebas ne. ",
+      "heading2": "Focus On What Drives Your Business",
+      "headingText2a": "Lorem ipsum dolor sit amet, ea mutat tation constituam per, mei error ocurreret definiebas ne. Te harum constituto inciderint his. ",
+      "image": "static/img/cert-weld/concrete-mould/d.jpg"
+    },
+    {
+      "heading1": "Vehicle Modifications",
+      "headingText1": "Lorem ipsum dolor sit amet, ea mutat tation constituam per, mei error ocurreret definiebas ne. ",
+      "heading2": "Focus On What Drives Your Business",
+      "headingText2a": "Lorem ipsum dolor sit amet, ea mutat tation constituam per, mei error ocurreret definiebas ne. Te harum constituto inciderint his. ",
+      "image": "static/img/cert-weld/transport/c.jpg"
+    }
+  ]
 }
