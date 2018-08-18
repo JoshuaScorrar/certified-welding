@@ -5,21 +5,26 @@
       wrap
       justify-center
       align-start
+      id="card-features"
     >
       <v-flex
+        fill-height
         xs12
-        sm4
+        sm5
         md4
         d-flex
         v-for="(feature, i) in features"
         :key="i"
+        class="card-feature"
+        :class="mobile ? 'pa-2' : ''"
       >
         <v-card
           :class="mobile ? '' : 'mi--' + i"
+          fill-height
           flat
           tile
           dark
-          class="grey darken-3 elevation-1"
+          class="grey darken-3 elevation-4"
           @mouseover="hoverIn"
           @mouseout="hoverOut"
         >
@@ -55,7 +60,10 @@
     },
     computed: {
       mobile () {
-        return this.$vuetify.breakpoint.xsOnly
+        return this.$vuetify.breakpoint.smAndDown
+      },
+      cardHeight () {
+        return this.$vuetify.breakpoint.mdAndDown ? '200px' : '300px'
       }
     },
 
@@ -64,17 +72,15 @@
         this.$router.push(this.items.find((i) => i.text === item.name).to)
       },
       hoverIn (e) {
-        TweenMax.to(e.currentTarget, 0.3, {y: -10})
+        TweenMax.to(e.currentTarget, 0.3, {y: -6})
+        TweenMax.to(e.currentTarget.querySelectorAll('.v-btn'), 0.3, {x: 7})
       },
       hoverOut (e) {
         TweenMax.to(e.currentTarget, 0.3, {y: 0})
+        TweenMax.to(e.currentTarget.querySelectorAll('.v-btn'), 0.3, {x: 0})
       }
     },
     props: {
-      cardHeight: {
-        type: String,
-        default: '300px'
-      },
       features: {
         type: Array,
         default: () => ([])
@@ -84,17 +90,25 @@
 </script>
 
 <style lang="stylus" scoped>
-  .mi--0
-    position: relative;
-    margin-top 2em;
 
-  .mi--1
-    position relative
-    margin-top 0em;
+  #card-features
+    &>div
+      position relative
+    .mi--0, .mi--3
+      margin-top 3em
+      right 0.75em
 
-  .mi--2
-    position: relative;
-    margin-top 4em;
+    .mi--1
+      margin-top 0
+      z-index 1
+
+    .mi--4
+      margin-top 5em
+      z-index 1
+
+    .mi--2, .mi--5
+      margin-top 2em
+      left 0.75em
 
   .container.grid-list-lg .layout .flex
     padding 0

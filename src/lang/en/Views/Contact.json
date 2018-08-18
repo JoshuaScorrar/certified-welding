@@ -7,7 +7,7 @@
     "static/img/welding/3.jpg",
     "static/img/welding/4.jpg"
   ],
-  "heading1": "Choose how you'd like to get in touch :)",
+  "heading1": "Here's how you can get in touch",
   "headingText1": "To find out more about what we can do for you - call, email or fill out the form.",
   "headingText2": "If you'd like to find us, check out the map below.",
   "phone": "092747154",
@@ -21,8 +21,8 @@
   "map": {
     "zoom": 17,
     "center": {
-      "lat": -36.9611,
-      "lng": 174.8922137
+      "lat": -36.960861,
+      "lng": 174.8920137
     },
     "markers": [
       {

@@ -34,16 +34,9 @@
           v-for="(pro, i) in computedProjects"
           :key="i"
           :src="path + pro.path + pro.img"
+          :class="$vuetify.breakpoint.smAndDown ? 'cover-img-mob' : ''"
         ></v-carousel-item>
       </v-carousel>
-      <!--<v-card>-->
-        <!--<v-card-title class="headline">Use Google's location service?</v-card-title>-->
-        <!--<v-card-text>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</v-card-text>-->
-        <!--<v-card-actions>-->
-          <!--<v-spacer></v-spacer>-->
-          <!--<v-btn color="green darken-1" flat @click.native="dialog = false">Close</v-btn>-->
-        <!--</v-card-actions>-->
-      <!--</v-card>-->
     </v-dialog>
     <v-tabs class="mb-5">
       <v-tab
@@ -158,9 +151,6 @@
   .fade-transition-leave-to
     display: none;
 
-  .image-viewer
-    /*min-height: 500px*/
-    /*height: 70vh*/
 
   .v-dialog:not(.v-dialog--fullscreen).v-dialog--active
     height: 70%;
@@ -168,8 +158,6 @@
   .v-dialog
     .v-carousel
       height 100%
-  /*height initial*/
-      /*height: auto*/
 
   .v-carousel
     height: 100%
@@ -181,7 +169,7 @@
       .v-btn
         top 0 !important
         right 0 !important
-    .v-jumbotron__image
+    img
       height 100%
       max-height 900px
       max-width 1600px
@@ -194,5 +182,13 @@
     .xs-12 .v-carousel
       height auto
       max-width 100%
+
+  .cover-img-mob img
+    max-width 100%
+    height auto
+    height initial
+    max-height 100%
+
+
 
 </style>

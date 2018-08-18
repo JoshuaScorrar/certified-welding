@@ -13,16 +13,16 @@
       "name": "Projects",
       "title": "PROJECTS",
       "text": "Certified Welding has worked on a wide range of both big and small projects. We take pride in what we've put into the world",
-      "subText": "Have a look at what we've done!",
+      "subText": "Go and see what we've done!",
       "img": "welding/projects",
-      "callToAction": "HAVE A LOOK"
+      "callToAction": "GO AND SEE"
     },
     {
       "name": "Services",
       "title": "SERVICES",
       "text": "Concrete Moulds, Structural Steel, Transport and much much more. Certified Welding offers a diverse set of skills and services.",
       "subText": "Check out what we can do.",
-      "img": "welding/services",
+      "img": "welding/services-2",
       "callToAction": "CHECK THEM OUT"
     },
     {
@@ -30,8 +30,32 @@
       "title": "CONTACT",
       "text": "Certified Welding can provide a wide variety of custom solutions to fit your needs.",
       "subText": "To find out what we can do for you, get in touch with us today!",
-      "img": "welding/weld-3",
+      "img": "welding/contact",
       "callToAction": "GET IN TOUCH"
+    },
+    {
+      "name": "Gallery",
+      "title": "GALLERY",
+      "text": "The team is proud of what we've engineered for past clients and have put them on here for you to see.",
+      "subText": "Have a look at what we're capable of.",
+      "img": "welding/gallery",
+      "callToAction": "HAVE A LOOK"
+    },
+    {
+      "name": "About",
+      "title": "ABOUT US",
+      "text": "Here at Certified Welding, we strive for excellence in pursuing our clients visions.",
+      "subText": "Learn more about Certified Welding and what we care about.",
+      "img": "welding/about",
+      "callToAction": "LEARN MORE"
+    },
+    {
+      "name": "Community",
+      "title": "COMMUNITY",
+      "text": "Certified Welding believes it's important to give back to the community",
+      "subText": "Find out about what we do in our local community.",
+      "img": "welding/community",
+      "callToAction": "FIND OUT"
     }
   ],
   "testimonialsTitle": "Testimonials",

@@ -27,7 +27,7 @@
       </v-btn>
     </v-toolbar-items>
     <v-btn v-else icon @click="toggleDrawer">
-      <v-icon>mdi-menu</v-icon>
+      <v-icon>menu</v-icon>
     </v-btn>
   </v-toolbar>
 </template>
@@ -54,7 +54,7 @@
       },
       onScroll () {
         this.isScrolling = (window.pageYOffset ||
-          document.documentElement.scrollTop || 0) > (this.$el.nextElementSibling.nextElementSibling.clientHeight - 100 || 100)
+          document.documentElement.scrollTop || 0) > ((this.$el.nextElementSibling.nextElementSibling.clientHeight / 2) || 100)
       }
     }
   }

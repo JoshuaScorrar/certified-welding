@@ -17,8 +17,14 @@
             text-xs-center
             :key="$route.path"
           >
-            <h1 class="white--text" v-html="title"/>
-            <h2 class="white--text" v-html="subTitle"/>
+            <h1
+              :class="fontBPSize"
+              class="white--text mb-3"
+              v-html="title"/>
+            <h2
+              :class="fontBPSize"
+              class="white--text"
+              v-html="subTitle"/>
           </v-flex>
         </v-layout>
       </v-container>
@@ -44,6 +50,9 @@
       },
       subTitle () {
         return this.$t(`Views.${this.namespace}.jumbotronSubTitle`)
+      },
+      fontBPSize () {
+        return this.$vuetify.breakpoint.smAndUp ? 'lg-text' : ''
       },
       heroImage () {
         let path = '/static/img/'
@@ -94,10 +103,20 @@
   h1
     font-family 'Roboto', sans-serif
     font-weight bold
-    font-size 60px
+    font-size 40px
+    line-height 1.1
 
   h2
-    font-weight 300
+    font-size 1.2em
+    font-weight 100
+
+  h1.lg-text
+    font-size 60px
+
+  h2.lg-text
+    font-size 1.5em
+
+
 
   .bg-gradient
     width: 100%;

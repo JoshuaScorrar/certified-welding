@@ -5,7 +5,7 @@
 
       <v-flex d-flex xs12 md7 class="pa-2">
 
-        <v-card class="pa-4 translucent">
+        <v-card :class="$vuetify.breakpoint.smAndDown ? 'pa-1' : 'pa-4'" class="translucent">
           <v-card-title v-text="contact.heading1" class="headline">
 
           </v-card-title>
@@ -13,23 +13,23 @@
 
           </v-card-title>
           <v-card-title class="subheading">
-            If you'd like to find us, check out the map below.
-            <v-icon color="primary" sm class="ml-2 pointer" @click="goToMap">
+            <span>If you'd like to find us, check out the map below.</span>
+            <v-icon d-inline color="primary" sm class="ml-2 pointer hidden-xs-only" @click="goToMap">
               my_location
             </v-icon>
           </v-card-title>
           <v-card-text>
             <v-text-field
               label="Name"
-              prepend-icon="mdi-account"
+              prepend-icon="account_box"
             />
             <v-text-field
               label="Email"
-              prepend-icon="mdi-email"
+              prepend-icon="email"
             />
             <v-textarea
               label="Message"
-              prepend-icon="mdi-message-text"
+              prepend-icon="message"
             />
           </v-card-text>
           <v-card-actions>
@@ -55,7 +55,7 @@
             </v-card-title>
 
             <v-card-text>
-              <v-layout justify-start row>
+              <v-layout mb-2 justify-start align-center row>
                 <v-icon
                   sm
                 >phone
@@ -63,7 +63,7 @@
                 <a class="ml-2 p-format" :href="'tel:' + contact.phone"  v-text="contact.phone">
                 </a>
               </v-layout>
-              <v-layout justify-start row>
+              <v-layout mb-2 justify-start align-center row>
                 <v-icon
                   sm
                 >home
@@ -71,7 +71,7 @@
                 <p class="ml-2 p-format" v-text="contact.address">
                 </p>
               </v-layout>
-              <v-layout justify-start row>
+              <v-layout justify-start align-start row>
                 <v-icon
                   sm
                 >access_time
@@ -91,7 +91,7 @@
               v-for="(person, i) in contact.people"
               :key="i"
             >
-              <v-layout justify-start row>
+              <v-layout mb-2 justify-start align-center row>
                 <v-icon
                   sm
                 >person_pin
@@ -99,7 +99,7 @@
                 <p class="ml-2 p-format" v-text="person.name">
                 </p>
               </v-layout>
-              <v-layout justify-start row>
+              <v-layout mb-2 justify-start align-center row>
                 <v-icon
                   sm
                 >label
@@ -107,7 +107,7 @@
                 <p class="ml-2 p-format" v-text="person.title">
                 </p>
               </v-layout>
-              <v-layout justify-start row>
+              <v-layout mb-2 justify-start align-center row>
                 <v-icon
                   sm
                 >smartphone
@@ -148,6 +148,8 @@
             :key="index"
             v-for="(m, index) in contact.map.markers"
             title="Certified Welding"
+            label="Certified Welding"
+            streetViewControl="true",
             :position="contact.map.center"
             :clickable="true"
             :draggable="true"
@@ -187,7 +189,7 @@
 <style lang="stylus" scoped>
 
   .translucent
-    background rgba(255, 255, 255, 0.35)
+    background rgba(255, 255, 255, 0.8)
 
   .vue-map-container
     width 100%
@@ -195,7 +197,7 @@
     min-height 50vh
 
   .p-format
-    margin-bottom: 8px
+    margin-bottom: 0
   .contact-pg
     .v-card__media img
       width initial

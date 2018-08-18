@@ -13,52 +13,11 @@
           <alpha-card-feature :features="cardFeatures"/>
         </v-flex>
 
-        <v-container grid-list-xl pa-0>
-          <v-layout
-            row
-            wrap
-            justify-center
-            align-center
-          >
-            <v-flex
-              xs12
-              sm3
-            >
-              <h2 class="text-md-center">Testimonials</h2>
-            </v-flex>
-          </v-layout>
-        </v-container>
-
-        <v-container grid-list-xl pa-0>
-          <v-layout
-            row
-            wrap
-            justify-center
-            align-start
-          >
-            <v-flex
-              xs10
-              sm4
-              align-start
-
-              v-for="(testimonial, i) in testimonials"
-              :class="['mi--' + i]"
-              :key="i"
-            >
-              <alpha-testimonial
-                :author="testimonial.author"
-                :title="testimonial.title"
-                :quote="testimonial.quote"
-              />
-            </v-flex>
-          </v-layout>
-        </v-container>
-
       </v-layout>
     </v-container>
 
     <alpha-hero
-      src="/static/img/welding/contact-bw.jpg"
+      src="/static/img/cert-weld/narek/c.jpg"
       :height="$vuetify.breakpoint.mdAndUp ? 500 : 'auto'"
       :jumbotron="false"
       dark
