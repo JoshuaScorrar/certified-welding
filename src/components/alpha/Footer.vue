@@ -13,20 +13,32 @@
           class="pa-4 grey darken-4"
         >
           <h5 class="title pb-3" v-text="company"/>
-          <ul>
-            <li v-for="(item, i) in computedSocial" :key="i">
-              <router-link :to="item.to" class="toolbar-logo">
-              <a class="layout align-center">
+          <v-layout
+            wrap
+            layout
+            align-center
+            :class="{'d-block' : $vuetify.breakpoint.smAndUp}"
+          >
+            <v-flex
+              wrap
+              v-for="(item, i) in computedSocial"
+              :key="i"
+              class="f-link"
+            >
+              <router-link
+                :to="item.to"
+                class="toolbar-logo layout align-center"
+              >
                 <v-icon
+                  sm
                   dark
                   class="mr-3"
                   v-text="item.icon"
                 />
-                <span class="subheading" v-text="item.text"/>
-              </a>
+                <span class="" v-text="item.text"/>
               </router-link>
-            </li>
-          </ul>
+            </v-flex>
+          </v-layout>
         </v-flex>
         <v-flex
           md3
@@ -186,6 +198,14 @@
     .container
       padding: 0
       margin: 0
+
+    .f-link
+      margin-bottom: 10px
+      a
+        text-decoration: none
+        transition: .2s ease-in
+        &:hover
+          opacity: .5
 
     ul
       list-style-type: none

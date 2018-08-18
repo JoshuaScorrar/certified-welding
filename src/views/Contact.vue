@@ -161,13 +161,13 @@
     <alpha-tag
       :icon="'phone'"
       :text="'Call us'"
-      :value="contact.phone"
+      :value="'tel:' + contact.phone"
       :offset="'220px'"
     ></alpha-tag>
     <alpha-tag
       :icon="'email'"
       :text="'Email us'"
-      :value="contact.email"
+      :value="'mailto:' + contact.email"
     ></alpha-tag>
   </v-container>
 </template>

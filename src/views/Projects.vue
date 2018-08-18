@@ -11,13 +11,20 @@
           fill-height
           xs12
           sm5
-          md4
+          md6
+          pa-0
           v-for="(item, i) in items"
+          class="mi"
+          :class="$vuetify.breakpoint.smAndDown ? 'pa-2' : 'mi--' + i"
           :key="i"
           d-flex>
-      <v-card dark>
+        <v-card
+            dark
+            @mouseover="hoverIn"
+            @mouseout="hoverOut"
+          >
         <v-card-media
-          height="300px"
+          height="250px"
           :src="item.image"
         >
           <v-container fill-height fluid class="bg-gradient">
@@ -30,7 +37,7 @@
         </v-card-media>
         <v-card-title>
           <div>
-            <p class="mt-3 " v-text="item.headingText2a"/>
+            <p class="mt-3 " v-text="item.headingText1"/>
           </div>
         </v-card-title>
       </v-card>
@@ -71,12 +78,25 @@
   </div>
 </template>
 <script>
+  /* eslint-disable no-undef */
+
   export default {
     metaInfo: {
       title: 'Projects',
       meta: [
         {name: 'description', content: 'Customized vue-cli templates for Vue and Vuetify'}
       ]
+    },
+
+    methods: {
+      hoverIn (e) {
+        TweenMax.to(e.currentTarget, 0.3, {y: -6})
+        TweenMax.to(e.currentTarget.querySelectorAll('.headline'), 0.3, {x: 7})
+      },
+      hoverOut (e) {
+        TweenMax.to(e.currentTarget, 0.3, {y: 0})
+        TweenMax.to(e.currentTarget.querySelectorAll('.headline'), 0.3, {x: 0})
+      }
     },
     computed: {
       items () {
@@ -89,6 +109,17 @@
   }
 </script>
 <style scoped lang="stylus">
+  .mi
+    position relative
+  .mi--0, .mi--2, .mi--4
+    margin-top 3em
+    right -0.75em
+
+  .mi--1, mi--3, .mi--5
+    margin-top 0
+    z-index 1
+
+
   .headline
     position: relative
     z-index 2

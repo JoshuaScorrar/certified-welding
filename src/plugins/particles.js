@@ -504,7 +504,6 @@ var pJS = function(tag_id, params){
   pJS.fn.particlesCreate = function(num){
     let area = pJS.canvas.h * pJS.canvas.w
     num = (area / 28000)
-    console.log('Particle Count: ' + num)
     for(var i = 0; i < num ; i++) {
       pJS.particles.array.push(new pJS.fn.particle(pJS.particles.color, pJS.particles.opacity.value));
     }

@@ -1,8 +1,8 @@
 <template>
   <div :style="{bottom: offset}" class="tag grey darken-3">
-    <v-layout :href="value" align-center justify-center>
+    <v-layout align-center justify-center>
       <v-tooltip left>
-        <v-icon slot="activator" dark large>
+        <v-icon :href="value" slot="activator" dark large>
           {{icon || "phone"}}
         </v-icon>
         <span>{{text}}</span>

@@ -13,11 +13,17 @@
           sm5
           md4
           v-for="(item, i) in items"
+          class="mi"
+          :class="$vuetify.breakpoint.smAndDown ? '' : 'mi--' + i"
           :key="i"
           d-flex>
-        <v-card dark>
+        <v-card
+          dark
+          @mouseover="hoverIn"
+          @mouseout="hoverOut"
+        >
           <v-card-media
-            height="300px"
+            height="200px"
             :src="item.image"
           >
             <v-container fill-height fluid class="bg-gradient">
@@ -73,22 +79,34 @@
 </div>
 </template>
 <script>
-export default {
-  metaInfo: {
-    title: 'Services',
-    meta: [
-      {name: 'description', content: 'Customized vue-cli templates for Vue and Vuetify'}
-    ]
-  },
-  computed: {
-    items () {
-      return this.$t('Views.Services.items')
+  /* eslint-disable no-undef */
+
+  export default {
+    metaInfo: {
+      title: 'Services',
+      meta: [
+        {name: 'description', content: 'Customized vue-cli templates for Vue and Vuetify'}
+      ]
     },
-    testimonials () {
-      return this.$t('Views.Home.testimonials')
+    methods: {
+      hoverIn (e) {
+        TweenMax.to(e.currentTarget, 0.3, {y: -6})
+        TweenMax.to(e.currentTarget.querySelectorAll('.headline'), 0.3, {x: 7})
+      },
+      hoverOut (e) {
+        TweenMax.to(e.currentTarget, 0.3, {y: 0})
+        TweenMax.to(e.currentTarget.querySelectorAll('.headline'), 0.3, {x: 0})
+      }
+    },
+    computed: {
+      items () {
+        return this.$t('Views.Services.items')
+      },
+      testimonials () {
+        return this.$t('Views.Home.testimonials')
+      }
     }
   }
-}
 </script>
 <style scoped lang="stylus">
   .bg-gradient
