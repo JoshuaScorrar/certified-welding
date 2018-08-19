@@ -34,7 +34,7 @@
       setTimeout(() => {
         this.animateCards()
         this.setLazyLoaded(true)
-      }, 2000)
+      }, 3000)
     },
     methods: {
       ...mapMutations('app', ['setLazyLoaded']),
