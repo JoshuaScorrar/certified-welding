@@ -2,9 +2,9 @@
   <v-content>
 
     <div id="particles-js"></div>
-    <v-fade-transition mode="out-in">
+    <transition name="view-fade" mode="out-in">
       <router-view id="view" class="pt-5" />
-    </v-fade-transition>
+    </transition>
 
   </v-content>
 
@@ -68,18 +68,25 @@
     right 0
     margin auto
 
-  #particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    top:0;
-    left:0;
-  }
+  #particles-js
+    position absolute
+    width 100%
+    height 100%
+    z-index 0
+    top 0
+    left 0
+
   #view
     min-height 100vh
 
-  .application .theme--light.v-card, .application.theme--light{
-    background: transparent;
-  }
+  .application .theme--light.v-card, .application.theme--light
+    background transparent
+
+
+  .view-fade-enter-active, .view-fade-leave-active
+    transition opacity .276s ease
+
+  .view-fade-enter, .view-fade-leave-to
+    opacity 0
+
 </style>

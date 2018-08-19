@@ -2,7 +2,7 @@
   <video-bg
     id="jumbotron"
     class="vh"
-    :sources="[heroVideo + '.mp4', heroVideo + '.ogv', heroVideo + '.webm']" :img="heroImage" :alt="heroImage">
+    :sources="[heroVideo + '.webm', heroVideo + '.mp4', heroVideo + '.ogv']" :img="heroImage" :alt="heroImage">
     <div class="z0 bg-gradient"></div>
     <v-fade-transition origin="top center 0.1" mode="out-in">
       <v-container
