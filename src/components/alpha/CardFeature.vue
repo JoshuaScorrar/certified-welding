@@ -29,7 +29,7 @@
           @mouseout="hoverOut"
         >
           <v-card-media
-            :src="`/static/img/${feature.img}.jpg`"
+            :src="lazyLoad(feature)"
             :height="cardHeight"
           />
           <v-flex pa-4>
@@ -55,10 +55,20 @@
     name: 'alpha-card-feature',
     data () {
       return {
+        lazy: false,
         items: this.$t('Layout.View.items')
       }
     },
+    mounted () {
+      let $this = this
+      setTimeout(() => {
+        $this.lazy = true
+      }, 2000)
+    },
     computed: {
+      // lazyLoad (e) {
+      //   return this.lazy ? '/static/img/' + this.img + '.jpg' : ''
+      // },
       mobile () {
         return this.$vuetify.breakpoint.smAndDown
       },
@@ -68,6 +78,11 @@
     },
 
     methods: {
+      lazyLoad (e) {
+        let s = 0
+        console.log(s)
+        return this.lazy ? '/static/img/' + e.img + '.jpg' : ''
+      },
       direct (item) {
         this.$router.push(this.items.find((i) => i.text === item.name).to)
       },

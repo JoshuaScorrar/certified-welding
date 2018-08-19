@@ -17,7 +17,7 @@
     </v-container>
 
     <alpha-hero
-      src="/static/img/cert-weld/narek/c.jpg"
+      :src="lazyLoad()"
       :height="$vuetify.breakpoint.mdAndUp ? 500 : 'auto'"
       :jumbotron="false"
       dark
@@ -60,10 +60,22 @@
         {name: 'description', content: 'Serious Welding for serious projects, from structural steel to concrete moulds, we do it all.'}
       ]
     },
+    data () {
+      return {
+        lazy: false
+      }
+    },
     mounted () {
+      let $this = this
+      setTimeout(() => {
+        $this.lazy = true
+      }, 2000)
       TweenMax.staggerFromTo('.v-card', 1, {y: 40, autoAlpha: 0}, {y: 0, autoAlpha: 1}, 0.2)
     },
     methods: {
+      lazyLoad () {
+        return this.lazy ? '/static/img/cert-weld/narek/c.jpg' : ''
+      },
       onScroll () {
         this.isScrolling = (window.pageYOffset ||
           document.documentElement.scrollTop || 0) > (this.$el.clientHeight || 100)
