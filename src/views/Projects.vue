@@ -37,7 +37,7 @@
             </v-layout>
           </v-container>
         </v-card-media>
-        <v-card-title>
+        <v-card-title class="min-h">
           <div>
             <p class="mt-3 " v-text="item.headingText1"/>
           </div>
@@ -112,6 +112,8 @@
   }
 </script>
 <style scoped lang="stylus">
+  .min-h
+    min-height: 150px
   .mi
     position relative
   .mi--0, .mi--2, .mi--4

@@ -1,29 +1,35 @@
 <template>
   <div>
-    <v-container grid-list-lg pa-0 pb-4>
+    <v-container
+      grid-list-lg
+      pa-0
+      pb-4
+      d-flex
+      justify-center
+    >
       <v-layout
         row
         wrap
         justify-center
         align-start
+        :class="$vuetify.breakpoint.lgAndUp ? 'offset-4-grid' : ''"
       >
         <v-flex
-          fill-height
           xs12
           sm5
           md6
           mb-3
+          lg3
           pa-0
           v-for="(item, i) in items"
-          class="mi"
-          :class="$vuetify.breakpoint.smAndDown ? 'pa-2' : 'mi--' + i"
+          :class="[$vuetify.breakpoint.smAndDown ? 'pa-2' : 'mi mi--' + i]"
           :key="i"
           d-flex>
-        <v-card
-          dark
-          @mouseover="hoverIn"
-          @mouseout="hoverOut"
-        >
+          <v-card
+            dark
+            @mouseover="hoverIn"
+            @mouseout="hoverOut"
+          >
           <v-card-media
             height="250px"
             :src="item.image"
@@ -37,14 +43,12 @@
               </v-layout>
             </v-container>
           </v-card-media>
-          <v-card-title>
+          <v-card-title class="min-h">
             <div>
               <p class="mt-3 " v-text="item.headingText2a"/>
             </div>
           </v-card-title>
         </v-card>
-
-
         </v-flex>
       </v-layout>
     </v-container>
@@ -64,12 +68,10 @@
         align-center
         justify-space-around
         wrap
-
       >
         <v-flex
           xs10
           md6
-
         >
           <alpha-testimonial
             :author="testimonials[2].author"
@@ -113,15 +115,28 @@
   }
 </script>
 <style scoped lang="stylus">
+  .min-h
+    min-height: 150px
   .mi
     position relative
   .mi--0, .mi--2, .mi--4
     margin-top 2em
     right -0.75em
-
   .mi--1, mi--3, .mi--5
     margin-top 0
     z-index 1
+
+  .offset-4-grid
+    max-width 1366px
+
+  .offset-4-grid > div:nth-child(1)
+    left 2em
+  .offset-4-grid > div:nth-child(2)
+    left 1em
+  .offset-4-grid > div:nth-child(3)
+    left 0em
+  .offset-4-grid > div:nth-child(4)
+    left -1em
 
   .bg-gradient
     background linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(255, 255, 255, 0.1) 90%);

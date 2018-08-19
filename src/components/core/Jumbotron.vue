@@ -114,7 +114,7 @@
 
   h2
     font-size 1.2em
-    font-weight 100
+    font-weight 400
 
   h1.lg-text
     font-size 60px
@@ -136,7 +136,7 @@
     /*rgba(255, 255, 255, 1))*/
     /*background: -moz-linear-gradient(top, rgba(0,0,0,0.89) 0%, rgba(255,255,255,0.85) 76%, rgba(255,255,255,1) 100%); !* FF3.6-15 *!*/
     /*background: -webkit-linear-gradient(top, rgba(0,0,0,0.89) 0%,rgba(255,255,255,0.85) 76%,rgba(255,255,255,1) 100%); !* Chrome10-25,Safari5.1-6 *!*/
-    background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%,rgba(103, 103, 103, 0.6) 59%,rgba(197, 197, 197, 0.73) 84%,rgba(255,255,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%,rgba(103, 103, 103, 0.95) 65%,rgba(197, 197, 197, 0.7) 84%,rgba(255,255,255,1) 100%);
 
   .z4
     z-index 4

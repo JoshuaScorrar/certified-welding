@@ -14,6 +14,7 @@
   /* eslint-disable no-undef */
 
   import '../../plugins/particles'
+
   const particlesJS = window.particlesJS
 
   export default {
@@ -30,22 +31,10 @@
     watch: {
       $route (to, from) {
         TweenMax.set('#particles-js', {autoAlpha: 0})
-        TweenMax.to('#particles-js', 0.4, {autoAlpha: 1})
-        window.pJSDom[0].pJS.fn.reset()
-      }
-    },
-    methods: {
-      scrollTo () {
-        this.hideScrollArrow = true
-        TweenMax.to(window, 0.8, {scrollTo: {y: '#view', offset: -100}})
-      }
-    },
-    computed: {
-      lazyLoaded () {
-        return this.$store.state.app.lazyLoaded
-      },
-      checkScrollArrow () {
-        return this.hideScrollArrow
+        setTimeout(() => {
+          TweenMax.to('#particles-js', 0.4, {autoAlpha: 1})
+          window.pJSDom[0].pJS.fn.reset()
+        }, 1000)
       }
     },
     mounted () {

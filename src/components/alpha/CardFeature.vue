@@ -1,5 +1,10 @@
 <template>
-  <v-container grid-list-lg pa-0>
+  <v-container
+    grid-list-lg
+    pa-0
+    d-flex
+    justify-center
+  >
     <v-layout
       row
       wrap
@@ -8,7 +13,6 @@
       id="card-features"
     >
       <v-flex
-        fill-height
         xs12
         sm5
         md4
@@ -111,6 +115,7 @@
     visibility hidden
 
   #card-features
+    max-width 1366px
     &>div
       position relative
     .mi--0, .mi--3
