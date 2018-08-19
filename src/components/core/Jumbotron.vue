@@ -2,7 +2,7 @@
   <video-bg
     id="jumbotron"
     class="vh"
-    :sources="[heroVideo]" :img="heroImage" :alt="heroImage">
+    :sources="[heroVideo + '.mp4', heroVideo + '.ogv', heroVideo + '.webm']" :img="heroImage" :alt="heroImage">
     <div class="z0 bg-gradient"></div>
     <v-fade-transition origin="top center 0.1" mode="out-in">
       <v-container
@@ -18,12 +18,12 @@
             :key="$route.path"
           >
             <h1
-              :class="fontBPSize"
-              class="white--text mb-3 invisible"
+              :class="[fontBPSize, {'invisible' : !lazyLoaded}]"
+              class="white--text mb-3"
               v-html="title"/>
             <h2
-              :class="fontBPSize"
-              class="white--text invisible"
+              :class="[fontBPSize, {'invisible' : !lazyLoaded}]"
+              class="white--text"
               v-html="subTitle"/>
           </v-flex>
         </v-layout>
@@ -41,6 +41,9 @@
     }),
 
     computed: {
+      lazyLoaded () {
+        return this.$store.state.app.lazyLoaded
+      },
       isHome () {
         return this.$route.path === '/'
       },
@@ -72,7 +75,6 @@
         let path = '/static/video/'
         let size = ''
         let name = 'top-a-'
-        let ext = '.mp4'
         switch (this.$vuetify.breakpoint.name) {
           case 'xs':
             size = '480'
@@ -90,14 +92,14 @@
             size = '1920'
             break
         }
-        return this.isBooted ? (path + name + size + ext) : ''
+        return (path + name + size)
       }
     },
-
     mounted () {
       setTimeout(() => {
         this.isBooted = true
         setTimeout(() => {
+          TweenMax.fromTo('.scroll-arrow', 0.5, {y: -15}, {delay: 2, y: 0, ease: Quint.easeIn, yoyo: true, repeat: -1})
           TweenMax.staggerFromTo('#jumbotron .invisible', 1.5, {y: 40, autoAlpha: 0}, {y: 1, autoAlpha: 1}, 0.2)
         }, 1)
       }, 500)
@@ -126,8 +128,6 @@
   h2.lg-text
     font-size 1.5em
 
-
-
   .bg-gradient
     width: 100%;
     height: 100%;
@@ -154,6 +154,6 @@
     width 100%
 
   .vh
-    height 65vh !important
+    height 75vh !important
 
 </style>

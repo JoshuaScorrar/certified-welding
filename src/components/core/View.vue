@@ -1,5 +1,6 @@
 <template>
   <v-content>
+
     <div id="particles-js"></div>
     <v-fade-transition mode="out-in">
       <router-view id="view" class="pt-5" />
@@ -21,6 +22,11 @@
         titleTemplate: '%s'
       }
     },
+    data () {
+      return {
+        hideScrollArrow: null
+      }
+    },
     watch: {
       $route (to, from) {
         TweenMax.set('#particles-js', {autoAlpha: 0})
@@ -28,6 +34,20 @@
           window.pJSDom[0].pJS.fn.reset()
           TweenMax.to('#particles-js', 0.4, {autoAlpha: 1})
         }, 1000)
+      }
+    },
+    methods: {
+      scrollTo () {
+        this.hideScrollArrow = true
+        TweenMax.to(window, 0.8, {scrollTo: {y: '#view', offset: -100}})
+      }
+    },
+    computed: {
+      lazyLoaded () {
+        return this.$store.state.app.lazyLoaded
+      },
+      checkScrollArrow () {
+        return this.hideScrollArrow
       }
     },
     mounted () {
@@ -38,7 +58,18 @@
   }
 </script>
 
-<style>
+<style lang="stylus">
+
+  .scroll-arrow
+    width 40px
+    height 40px
+    z-index 20000
+    position absolute
+    top 20px
+    left 0
+    right 0
+    margin auto
+
   #particles-js {
     position: absolute;
     width: 100%;
