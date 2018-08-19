@@ -29,7 +29,7 @@ Vue.use(Router)
 
 // Create a new router
 const router = new Router({
-  mode: 'spa',
+  //mode: 'home',
   routes: paths.map(path => route(path.path, path.view)).concat([
     { path: '*', redirect: '/' }
   ]),
