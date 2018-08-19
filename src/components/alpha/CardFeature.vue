@@ -87,7 +87,7 @@
         }
         this.showCards = (window.pageYOffset ||
           document.documentElement.scrollTop || 0) >
-          (this.$el.getBoundingClientRect().top - (window.innerHeight / 2) || 300)
+          (this.$el.getBoundingClientRect().top - (window.innerHeight / 1.3) || 300)
       },
       lazyLoad (e) {
         return this.cardsShown ? '/static/img/' + e.img + '.jpg' : ''
