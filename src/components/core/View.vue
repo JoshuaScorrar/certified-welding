@@ -30,10 +30,8 @@
     watch: {
       $route (to, from) {
         TweenMax.set('#particles-js', {autoAlpha: 0})
-        setTimeout(() => {
-          window.pJSDom[0].pJS.fn.reset()
-          TweenMax.to('#particles-js', 0.4, {autoAlpha: 1})
-        }, 1000)
+        TweenMax.to('#particles-js', 0.4, {autoAlpha: 1})
+        window.pJSDom[0].pJS.fn.reset()
       }
     },
     methods: {
@@ -78,6 +76,9 @@
     top:0;
     left:0;
   }
+  #view
+    min-height 100vh
+
   .application .theme--light.v-card, .application.theme--light{
     background: transparent;
   }

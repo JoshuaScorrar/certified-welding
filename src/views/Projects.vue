@@ -12,6 +12,7 @@
           xs12
           sm5
           md6
+          mb-3
           pa-0
           v-for="(item, i) in items"
           class="mi"
@@ -114,17 +115,17 @@
   .mi
     position relative
   .mi--0, .mi--2, .mi--4
-    margin-top 3em
+    margin-top 2em
     right -0.75em
 
   .mi--1, mi--3, .mi--5
     margin-top 0
     z-index 1
 
-
   .headline
     position: relative
     z-index 2
+
   .bg-gradient
     background linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(255, 255, 255, 0.2) 90%);
 </style>

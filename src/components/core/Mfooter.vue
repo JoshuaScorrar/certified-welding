@@ -1,4 +1,5 @@
 <template>
+  <v-fade-transition mode="out-in">
   <alpha-footer
     :company="$t('Layout.Footer.company')"
     :social="social"
@@ -12,6 +13,7 @@
       {{ $t('Layout.Footer.rights') }}
     </span>
   </alpha-footer>
+  </v-fade-transition>
 </template>
 
 <script>
