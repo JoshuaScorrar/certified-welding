@@ -25,16 +25,16 @@
     },
     computed: {
       setLazy: (val) => {
-        if (this.getLazy()) {
-          this.animateCards()
-        }
+        // if (this.getLazy()) {
+        //   this.animateCards()
+        // }
       }
     },
     mounted () {
       setTimeout(() => {
         this.animateCards()
         this.setLazyLoaded(true)
-      }, 3000)
+      }, 2000)
     },
     methods: {
       ...mapMutations('app', ['setLazyLoaded']),
@@ -44,6 +44,7 @@
       },
       onScroll () {
         if (this.lazyTriggered && !this.getLazy()) {
+          this.animateCards()
           this.setLazyLoaded(true)
         }
         this.lazyTriggered = (window.pageYOffset ||
