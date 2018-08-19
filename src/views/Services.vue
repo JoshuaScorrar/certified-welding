@@ -25,6 +25,7 @@
           <v-card-media
             height="200px"
             :src="item.image"
+            :alt="item.image"
           >
             <v-container fill-height fluid class="bg-gradient">
               <v-layout fill-height>
@@ -47,6 +48,7 @@
     </v-container>
   <alpha-hero
     src="/static/img/cert-weld/narek/c.jpg"
+    alt="narek image"
     :height="$vuetify.breakpoint.mdAndUp ? 500 : 'auto'"
     :jumbotron="false"
     dark

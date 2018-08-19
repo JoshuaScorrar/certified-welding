@@ -31,13 +31,16 @@
           <v-card-media
             :src="lazyLoad(feature)"
             :height="cardHeight"
+            :alt="feature.image"
           />
           <v-flex pa-4>
           <v-card-title class="title text-lg-center pa-0 mb-3" v-text="feature.title"/>
           <v-card-text class="pa-0 mb-2" v-text="feature.text"/>
           <v-card-text class="pa-0 pb-5" v-text="feature.subText"/>
           <v-card-actions class="pa-0">
-            <v-btn @click="direct(feature)">
+            <v-btn
+              :aria-label="feature.callToAction + ' button'"
+              @click="direct(feature)">
               {{feature.callToAction}}
             </v-btn>
           </v-card-actions>
@@ -63,7 +66,7 @@
       let $this = this
       setTimeout(() => {
         $this.lazy = true
-        TweenMax.staggerFromTo('.v-card', 1, {y: 40, autoAlpha: 0}, {y: 0, autoAlpha: 1}, 0.2)
+        TweenMax.staggerFromTo('.v-card', 1, {y: 40, autoAlpha: 0}, {delay: 0.5, y: 0, autoAlpha: 1}, 0.2)
       }, 500)
     },
     computed: {

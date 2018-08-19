@@ -8,9 +8,10 @@
     v-scroll="onScroll"
     class="pt-1 pb-1 z20"
   >
-    <router-link to="/" class="toolbar-logo">
+    <router-link :aria-label="'Home logo button'" to="/" class="toolbar-logo">
       <img
         src="/static/img/cert-weld-logo-ws-180w.png"
+        alt="logo"
       />
     </router-link>
     <v-spacer />
@@ -20,6 +21,7 @@
         :color="!isScrolling ? 'black--text' : undefined"
         :active-class="!isScrolling ? 'primary--text highlight' : 'primary--text a-highlight'"
         :key="i"
+        :aria-label="item.text + ' button'"
         :to="item.to"
         flat
       >

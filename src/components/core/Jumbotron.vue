@@ -2,7 +2,7 @@
   <video-bg
     id="jumbotron"
     class="vh"
-    :sources="[heroVideo]" :img="heroImage">
+    :sources="[heroVideo]" :img="heroImage" :alt="heroImage">
     <div class="z0 bg-gradient"></div>
     <v-fade-transition origin="top center 0.1" mode="out-in">
       <v-container
@@ -19,11 +19,11 @@
           >
             <h1
               :class="fontBPSize"
-              class="white--text mb-3"
+              class="white--text mb-3 invisible titlesss"
               v-html="title"/>
             <h2
               :class="fontBPSize"
-              class="white--text"
+              class="white--text invisible"
               v-html="subTitle"/>
           </v-flex>
         </v-layout>
@@ -33,6 +33,8 @@
 </template>
 
 <script>
+  /* eslint-disable no-undef */
+
   export default {
     data: () => ({
       isBooted: false
@@ -95,11 +97,19 @@
     mounted () {
       setTimeout(() => {
         this.isBooted = true
-      }, 200)
+        setTimeout(() => {
+          TweenMax.staggerFromTo('#jumbotron .invisible', 1.5, {y: 40, autoAlpha: 0}, {y: 1, autoAlpha: 1}, 0.2)
+        }, 1)
+      }, 500)
     }
   }
 </script>
 <style scoped lang="stylus">
+
+  .invisible
+    opacity 0
+    visibility hidden
+
   h1
     font-family 'Roboto', sans-serif
     font-weight bold
