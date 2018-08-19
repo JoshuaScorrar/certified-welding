@@ -1,22 +1,19 @@
 <template>
   <div>
-
     <v-container fill-height>
-
       <v-layout
         justify-center
         align-center
         wrap
       >
-
         <v-flex dark xs12 mb-5>
           <alpha-card-feature :features="cardFeatures"/>
         </v-flex>
-
       </v-layout>
     </v-container>
 
     <alpha-hero
+      v-scroll="onScrollBotImg"
       :src="lazyLoad()"
       :height="$vuetify.breakpoint.mdAndUp ? 500 : 'auto'"
       :jumbotron="false"
@@ -62,22 +59,28 @@
     },
     data () {
       return {
-        lazy: false
+        botImgShown: false,
+        showBotImg: false
       }
     },
     mounted () {
       let $this = this
       setTimeout(() => {
-        $this.lazy = true
-      }, 1000)
+        $this.botImgShown = true
+        $this.showBotImg = true
+      }, 3000)
     },
     methods: {
       lazyLoad () {
-        return this.lazy ? '/static/img/cert-weld/narek/c.jpg' : ''
+        return this.botImgShown ? '/static/img/cert-weld/narek/c.jpg' : ''
       },
-      onScroll () {
-        this.isScrolling = (window.pageYOffset ||
-          document.documentElement.scrollTop || 0) > (this.$el.clientHeight || 100)
+      onScrollBotImg () {
+        if (this.showBotImg && !this.botImgShown) {
+          this.botImgShown = true
+        }
+        this.showBotImg = (window.pageYOffset ||
+          document.documentElement.scrollTop || 0) >
+          ((this.$el.getBoundingClientRect().top - window.innerHeight) || 100)
       }
     },
     computed: {

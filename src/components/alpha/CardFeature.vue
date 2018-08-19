@@ -1,5 +1,5 @@
 <template>
-  <v-container grid-list-lg pa-0>
+  <v-container grid-list-lg pa-0 v-scroll="onScrollCards">
     <v-layout
       row
       wrap
@@ -58,21 +58,19 @@
     name: 'alpha-card-feature',
     data () {
       return {
-        lazy: false,
+        showCards: false,
+        cardsShown: false,
         items: this.$t('Layout.View.items')
       }
     },
     mounted () {
       let $this = this
       setTimeout(() => {
-        $this.lazy = true
-        TweenMax.staggerFromTo('.v-card', 1, {y: 40, autoAlpha: 0}, {delay: 0.5, y: 0, autoAlpha: 1}, 0.2)
-      }, 500)
+        $this.showCards = true
+        $this.cardsShown = true
+      }, 3000)
     },
     computed: {
-      // lazyLoad (e) {
-      //   return this.lazy ? '/static/img/' + this.img + '.jpg' : ''
-      // },
       mobile () {
         return this.$vuetify.breakpoint.smAndDown
       },
@@ -82,10 +80,17 @@
     },
 
     methods: {
+      onScrollCards () {
+        if (this.showCards && !this.cardsShown) {
+          this.cardsShown = true
+          TweenMax.staggerFromTo('.v-card', 1, {y: 40, autoAlpha: 0}, {delay: 0.5, y: 0, autoAlpha: 1}, 0.2)
+        }
+        this.showCards = (window.pageYOffset ||
+          document.documentElement.scrollTop || 0) >
+          (this.$el.getBoundingClientRect().top - (window.innerHeight / 2) || 300)
+      },
       lazyLoad (e) {
-        let s = 0
-        console.log(s)
-        return this.lazy ? '/static/img/' + e.img + '.jpg' : ''
+        return this.cardsShown ? '/static/img/' + e.img + '.jpg' : ''
       },
       direct (item) {
         this.$router.push(this.items.find((i) => i.text === item.name).to)

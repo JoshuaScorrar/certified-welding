@@ -19,7 +19,7 @@
           >
             <h1
               :class="fontBPSize"
-              class="white--text mb-3 invisible titlesss"
+              class="white--text mb-3 invisible"
               v-html="title"/>
             <h2
               :class="fontBPSize"
@@ -90,7 +90,7 @@
             size = '1920'
             break
         }
-        return path + name + size + ext
+        return this.isBooted ? (path + name + size + ext) : ''
       }
     },
 
