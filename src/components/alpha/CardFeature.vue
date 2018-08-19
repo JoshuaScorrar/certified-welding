@@ -24,7 +24,7 @@
           flat
           tile
           dark
-          class="grey darken-3 elevation-4"
+          class="grey darken-3 elevation-4 invisible"
           @mouseover="hoverIn"
           @mouseout="hoverOut"
         >
@@ -63,7 +63,8 @@
       let $this = this
       setTimeout(() => {
         $this.lazy = true
-      }, 2000)
+        TweenMax.staggerFromTo('.v-card', 1, {y: 40, autoAlpha: 0}, {y: 0, autoAlpha: 1}, 0.2)
+      }, 500)
     },
     computed: {
       // lazyLoad (e) {
@@ -105,6 +106,9 @@
 </script>
 
 <style lang="stylus" scoped>
+  .invisible
+    opacity 0
+    visibility hidden
 
   #card-features
     &>div

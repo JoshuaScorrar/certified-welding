@@ -69,8 +69,7 @@
       let $this = this
       setTimeout(() => {
         $this.lazy = true
-      }, 2000)
-      TweenMax.staggerFromTo('.v-card', 1, {y: 40, autoAlpha: 0}, {y: 0, autoAlpha: 1}, 0.2)
+      }, 1000)
     },
     methods: {
       lazyLoad () {
