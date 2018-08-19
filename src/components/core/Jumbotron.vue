@@ -75,22 +75,16 @@
         let path = '/static/video/'
         let size = ''
         let name = 'top-a-'
-        switch (this.$vuetify.breakpoint.name) {
-          case 'xs':
-            size = '480'
-            break
-          case 'sm':
-            size = '768'
-            break
-          case 'md':
-            size = '1024'
-            break
-          case 'lg':
-            size = '1280'
-            break
-          case 'xl':
-            size = '1920'
-            break
+        let bp = this.$vuetify.breakpoint
+
+        if (bp.smAndDown) {
+          size = '768'
+        } else if (bp.mdAndDown) {
+          size = '1024'
+        } else if (bp.lgAndDown) {
+          size = '1280'
+        } else {
+          size = '1920'
         }
         return (path + name + size)
       }
