@@ -4,48 +4,7 @@
     <v-layout justify-space-between wrap>
 
       <v-flex d-flex xs12 md7 class="pa-2">
-        <v-form ref="form" v-model="valid" method="POST" lazy-validation netlify name="submitMessage">
-          <v-text-field
-            prepend-icon="account_box"
-            v-model="name"
-            :rules="nameRules"
-            :counter="10"
-            label="name"
-            name="name"
-            type="text"
-            required
-          ></v-text-field>
-          <v-text-field
-            prepend-icon="email"
-            v-model="email"
-            :rules="emailRules"
-            label="E-mail"
-            name="email"
-            type="email"
-            required
-          ></v-text-field>
 
-          <v-text-field
-            prepend-icon="message"
-            v-model="message"
-            :rules="messageRules"
-            label="Message"
-            name="message"
-            type="text"
-            required
-          ></v-text-field>
-
-
-          <v-btn
-            :disabled="!valid"
-
-            type="submit"
-          >
-            submit
-          </v-btn>
-          <v-btn
-            @click="clear">clear</v-btn>
-        </v-form>
         <v-card :class="$vuetify.breakpoint.smAndDown ? 'pa-1' : 'pa-4'" class="translucent">
           <v-card-title v-text="contact.heading1" class="headline">
 
@@ -59,24 +18,70 @@
               my_location
             </v-icon>
           </v-card-title>
-          <v-card-text>
+          <v-form
+            v-if="!submitted"
+            class="pa-3"
+            ref="form"
+            v-model="valid"
+            method="POST"
+            lazy-validation
+            netlify
+            name="submitMessage"
+          >
+
             <v-text-field
-              label="Name"
               prepend-icon="account_box"
-            />
+              v-model="name"
+              :rules="nameRules"
+              label="name"
+              name="name"
+              type="text"
+              required
+            ></v-text-field>
+
             <v-text-field
-              label="Email"
               prepend-icon="email"
-            />
-            <v-textarea
-              label="Message"
+              v-model="email"
+              :rules="emailRules"
+              label="E-mail"
+              name="email"
+              type="email"
+              required
+            ></v-text-field>
+
+            <v-text-field
               prepend-icon="message"
-            />
-          </v-card-text>
-          <v-card-actions>
+              v-model="message"
+              :rules="messageRules"
+              label="Message"
+              name="message"
+              type="text"
+              required
+            ></v-text-field>
+
+          </v-form>
+          <v-flex pa-3
+            v-else
+            class="headline">
+
+              <span>Thanks for contacting us! We'll get back to you with-in the next 2 working days</span>
+            <v-icon>
+              thumb_up
+            </v-icon>
+          </v-flex>
+          <v-card-actions class="mt-5" v-if="!submitted">
             <v-spacer/>
-            <v-btn type="submit" large class="px-5" color="primary">
-              {{ contact.submit }}
+            <v-btn
+              class="px-5 mr-3"
+              color="warning"
+              @click="clear">clear</v-btn>
+            <v-btn
+              class="px-5"
+              color="primary"
+              :disabled="!valid"
+              @click="handleSubmit"
+            >
+              submit
             </v-btn>
           </v-card-actions>
         </v-card>
@@ -221,12 +226,13 @@
     components: {AlphaTag},
     data () {
       return {
+        submitted: null,
         contact: this.$t('Views.Contact'),
         valid: true,
         name: '',
         nameRules: [
           v => !!v || 'Name is required',
-          v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+          v => (v && v.length >= 3) || 'Name must more than 4 characters'
         ],
         email: '',
         emailRules: [
@@ -256,12 +262,15 @@
           .join('&')
       },
       handleSubmit (e) {
+        let $this = this
         fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: this.encode({ 'form-name': 'submitMessage', name: this.name, email: this.email, message: this.message })
         })
-          .then(() => alert('Success!'))
+          .then(() => {
+            $this.submitted = true
+          })
           .catch(error => alert(error))
         e.preventDefault()
       }
