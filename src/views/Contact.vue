@@ -38,7 +38,8 @@
 
           <v-btn
             :disabled="!valid"
-            @click="handleSubmit"
+
+            type="submit"
           >
             submit
           </v-btn>
