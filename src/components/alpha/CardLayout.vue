@@ -5,6 +5,7 @@
     pb-4
     d-flex
     justify-center
+    class="max-view-width"
   >
     <v-layout
       row

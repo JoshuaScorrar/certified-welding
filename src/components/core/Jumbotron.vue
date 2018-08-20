@@ -14,6 +14,7 @@
       >
         <v-layout align-center class="z4">
           <v-flex
+            class="m-title"
             text-xs-center
             :key="$route.path"
           >
@@ -23,8 +24,19 @@
               v-html="title"/>
             <h2
               :class="[fontBPSize, {'invisible' : !lazyLoaded}]"
-              class="white--text"
+              class="white--text mb-4"
               v-html="subTitle"/>
+            <!--<p-->
+              <!--:class="[fontBPSize, {'invisible' : !lazyLoaded}]"-->
+              <!--class="white&#45;&#45;text"-->
+              <!--v-html="subSubTitle">-->
+            <!--</p>-->
+            <v-btn light class="mt-4" @click="scrollDown">
+              <v-icon dark class="mr-3">
+                {{scrolled ? 'check_circle' : 'keyboard_arrow_down'}}
+              </v-icon>
+              See More
+            </v-btn>
           </v-flex>
         </v-layout>
       </v-container>
@@ -37,8 +49,16 @@
 
   export default {
     data: () => ({
-      isBooted: false
+      scrolled: null,
+      isBooted: null
     }),
+
+    methods: {
+      scrollDown () {
+        this.scrolled = true
+        TweenMax.to(window, 0.7, {delay: 0.2, scrollTo: {y: '#view'}})
+      }
+    },
 
     computed: {
       lazyLoaded () {
@@ -55,6 +75,9 @@
       },
       subTitle () {
         return this.$t(`Views.${this.namespace}.jumbotronSubTitle`)
+      },
+      subSubTitle () {
+        return this.$t(`Views.${this.namespace}.jumbotronSubSubTitle`)
       },
       fontBPSize () {
         return this.$vuetify.breakpoint.smAndUp ? 'lg-text' : ''
@@ -106,6 +129,11 @@
     opacity 0
     visibility hidden
 
+  .m-title
+    p
+      font-size 20px
+      font-weight 100
+
   h1
     font-family 'Roboto', sans-serif
     font-weight bold
@@ -136,7 +164,7 @@
     /*rgba(255, 255, 255, 1))*/
     /*background: -moz-linear-gradient(top, rgba(0,0,0,0.89) 0%, rgba(255,255,255,0.85) 76%, rgba(255,255,255,1) 100%); !* FF3.6-15 *!*/
     /*background: -webkit-linear-gradient(top, rgba(0,0,0,0.89) 0%,rgba(255,255,255,0.85) 76%,rgba(255,255,255,1) 100%); !* Chrome10-25,Safari5.1-6 *!*/
-    background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%,rgba(103, 103, 103, 0.95) 65%,rgba(197, 197, 197, 0.7) 84%,rgba(255,255,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%,rgba(103, 103, 103, 0.8) 65%,rgba(197, 197, 197, 0.6) 84%,rgba(255,255,255,1) 100%);
 
   .z4
     z-index 4

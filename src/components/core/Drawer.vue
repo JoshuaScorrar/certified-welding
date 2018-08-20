@@ -59,6 +59,7 @@
   .v-list__tile--active
     .v-icon
       color: #2592bf
+
   .v-navigation-drawer--temporary, .v-navigation-drawer--is-mobile
     z-index 21
 </style>

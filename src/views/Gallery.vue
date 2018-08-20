@@ -1,5 +1,5 @@
 <template>
-  <v-container fill-height>
+  <v-container fill-height class="max-view-width">
     <v-layout justify-center align-center>
       <v-flex xs12 lg10 class="mb-5">
         <alpha-images

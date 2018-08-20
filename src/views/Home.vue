@@ -1,6 +1,14 @@
 <template>
   <div>
-    <v-container fill-height>
+    <!--<v-container>-->
+      <!--<v-layout>-->
+        <!--<v-flex align-center text-xs-center>-->
+          <!--<h1 class="mb-3">OFFERING A WEALTH OF ENGINEERING EXPERIENCE AND KNOWLEDGE</h1>-->
+          <!--<h3>Certified Welding is the right choice for you</h3>-->
+        <!--</v-flex>-->
+      <!--</v-layout>-->
+    <!--</v-container>-->
+    <v-container fill-height class="max-view-width">
       <v-layout
         justify-center
         align-center

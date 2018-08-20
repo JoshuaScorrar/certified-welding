@@ -1,13 +1,10 @@
 <template>
   <v-content>
-
     <div id="particles-js"></div>
     <transition name="view-fade" mode="out-in">
       <router-view id="view" class="pt-5" />
     </transition>
-
   </v-content>
-
 </template>
 
 <script>
@@ -65,12 +62,8 @@
     top 0
     left 0
 
-  #view
-    min-height 100vh
-
   .application .theme--light.v-card, .application.theme--light
     background transparent
-
 
   .view-fade-enter-active, .view-fade-leave-active
     transition opacity .276s ease

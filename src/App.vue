@@ -23,13 +23,6 @@
         lazyTriggered: null
       }
     },
-    computed: {
-      setLazy: (val) => {
-        // if (this.getLazy()) {
-        //   this.animateCards()
-        // }
-      }
-    },
     mounted () {
       setTimeout(() => {
         this.animateCards()
@@ -40,6 +33,10 @@
       ...mapMutations('app', ['setLazyLoaded']),
       ...mapGetters('app', ['getLazy']),
       animateCards () {
+        if (this.animated) {
+          return
+        }
+        this.animated = true
         TweenMax.staggerFromTo('.v-card', 1, {y: 40, autoAlpha: 0}, {delay: 0.5, y: 0, autoAlpha: 1}, 0.2)
       },
       onScroll () {
@@ -58,4 +55,8 @@
 <style lang="stylus">
   .pointer
     cursor pointer
+
+  .max-view-width
+    max-width 1366px
+    margin 0 auto
 </style>

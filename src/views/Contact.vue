@@ -1,5 +1,5 @@
 <template>
-  <v-container fill-height class="mb-5 contact-pg">
+  <v-container fill-height class="max-view-width mb-5 contact-pg">
 
     <v-layout justify-space-between wrap>
 

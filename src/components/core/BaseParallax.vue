@@ -5,7 +5,7 @@
 
 <script>
   export default {
-    name: 'alpha-bot-parallax'
+    name: 'base-parallax'
   }
 </script>
 
