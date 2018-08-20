@@ -38,12 +38,12 @@
 
           <v-btn
             :disabled="!valid"
-            @click="submit"
             type="submit"
           >
             submit
           </v-btn>
-          <v-btn>clear</v-btn>
+          <v-btn
+            @click="clear">clear</v-btn>
         </v-form>
         <v-card :class="$vuetify.breakpoint.smAndDown ? 'pa-1' : 'pa-4'" class="translucent">
           <v-card-title v-text="contact.heading1" class="headline">
