@@ -4,7 +4,46 @@
     <v-layout justify-space-between wrap>
 
       <v-flex d-flex xs12 md7 class="pa-2">
+        <v-form ref="form" v-model="valid" lazy-validation netlify name="submitMessage">
+          <v-text-field
+            prepend-icon="account_box"
+            v-model="name"
+            :rules="nameRules"
+            :counter="10"
+            label="name"
+            name="name"
+            type="text"
+            required
+          ></v-text-field>
+          <v-text-field
+            prepend-icon="email"
+            v-model="email"
+            :rules="emailRules"
+            label="E-mail"
+            name="email"
+            type="text"
+            required
+          ></v-text-field>
 
+          <v-text-field
+            prepend-icon="message"
+            v-model="message"
+            :rules="messageRules"
+            label="Message"
+            name="message"
+            type="text"
+            required
+          ></v-text-field>
+
+
+          <v-btn
+            :disabled="!valid"
+            @click="submit"
+          >
+            submit
+          </v-btn>
+          <v-btn type="submit">clear</v-btn>
+        </v-form>
         <v-card :class="$vuetify.breakpoint.smAndDown ? 'pa-1' : 'pa-4'" class="translucent">
           <v-card-title v-text="contact.heading1" class="headline">
 
@@ -34,7 +73,7 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer/>
-            <v-btn large class="px-5" color="primary">
+            <v-btn type="submit" large class="px-5" color="primary">
               {{ contact.submit }}
             </v-btn>
           </v-card-actions>
@@ -149,7 +188,7 @@
             v-for="(m, index) in contact.map.markers"
             title="Certified Welding"
             label="Certified Welding"
-            streetViewControl="true",
+            streetViewControl="true"
             :position="contact.map.center"
             :clickable="true"
             :draggable="true"
@@ -180,7 +219,24 @@
     components: {AlphaTag},
     data () {
       return {
-        contact: this.$t('Views.Contact')
+        contact: this.$t('Views.Contact'),
+        valid: true,
+        name: '',
+        nameRules: [
+          v => !!v || 'Name is required',
+          v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+        ],
+        email: '',
+        emailRules: [
+          v => !!v || 'E-mail is required',
+          v => /.+@.+/.test(v) || 'E-mail must be valid'
+        ],
+        message: '',
+        messageRules: [
+          v => !!v || 'Message must be valid',
+          v => (v && v.length >= 10) || 'Your message must be more than 10 characters'
+        ],
+        select: null
       }
     },
     methods: {
@@ -188,6 +244,9 @@
         let tar = document.getElementById('map')
         let pos = tar.getBoundingClientRect()
         TweenMax.to(window, 0.3, {scrollTo: {y: window.scrollY + pos.top - (pos.height / 2)}})
+      },
+      clear () {
+        this.$refs.form.reset()
       }
     },
     metaInfo: {

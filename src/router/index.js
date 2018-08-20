@@ -47,7 +47,7 @@ const router = new Router({
     }
     return {
       x: 0,
-      y: top
+      y: 0
     }
   }
 })

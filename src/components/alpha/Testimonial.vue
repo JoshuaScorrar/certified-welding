@@ -37,7 +37,7 @@
       testimonialScroll (e) {
         let el = this.$el
         let pos = el.getBoundingClientRect().top
-        if (!this.showTestimonial && pos < (window.innerHeight / 1.5)) {
+        if (!this.showTestimonial && pos < (window.innerHeight / 1.1)) {
           this.showTestimonial = true
           TweenMax.fromTo(el, 1.7, {y: 70, autoAlpha: 0}, {y: 0, autoAlpha: 1})
         }

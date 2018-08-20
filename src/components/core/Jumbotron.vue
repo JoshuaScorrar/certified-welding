@@ -31,11 +31,15 @@
               <!--class="white&#45;&#45;text"-->
               <!--v-html="subSubTitle">-->
             <!--</p>-->
-            <v-btn light class="mt-4" @click="scrollDown">
+            <v-btn
+              light
+              class="mt-4"
+              :class="[{'invisible' : !lazyLoaded}, {'theme--dark' : scrolled}]"
+              @click="scrollDown">
               <v-icon dark class="mr-3">
                 {{scrolled ? 'check_circle' : 'keyboard_arrow_down'}}
               </v-icon>
-              See More
+              {{scrolled ? 'More Seen' : 'See More'}}
             </v-btn>
           </v-flex>
         </v-layout>
@@ -55,11 +59,16 @@
 
     methods: {
       scrollDown () {
+        let pos = window.innerHeight * 0.65
         this.scrolled = true
-        TweenMax.to(window, 0.7, {delay: 0.2, scrollTo: {y: '#view', autoKill: false}})
+        TweenMax.to(window, 0.7, {delay: 0.2, scrollTo: {y: pos, autoKill: false}})
       }
     },
-
+    watch: {
+      $route (to, from) {
+        this.scrolled = false
+      }
+    },
     computed: {
       lazyLoaded () {
         return this.$store.state.app.lazyLoaded
@@ -75,9 +84,6 @@
       },
       subTitle () {
         return this.$t(`Views.${this.namespace}.jumbotronSubTitle`)
-      },
-      subSubTitle () {
-        return this.$t(`Views.${this.namespace}.jumbotronSubSubTitle`)
       },
       fontBPSize () {
         return this.$vuetify.breakpoint.smAndUp ? 'lg-text' : ''
