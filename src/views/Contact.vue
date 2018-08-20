@@ -254,11 +254,11 @@
           .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
           .join('&')
       },
-      handleSubmit () {
+      handleSubmit (e) {
         fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: this.encode({ 'form-name': 'contact', name: this.name, email: this.email, message: this.message })
+          body: this.encode({ 'form-name': 'submitMessage', name: this.name, email: this.email, message: this.message })
         })
           .then(() => alert('Success!'))
           .catch(error => alert(error))
