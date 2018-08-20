@@ -1,57 +1,8 @@
 <template>
   <div>
-    <v-container
-      grid-list-lg
-      pa-0
-      pb-4
-      d-flex
-      justify-center
-    >
-      <v-layout
-        row
-        wrap
-        justify-center
-        align-start
-        :class="$vuetify.breakpoint.lgAndUp ? 'offset-4-grid' : ''"
-      >
-        <v-flex
-          xs12
-          sm5
-          md6
-          mb-3
-          lg3
-          pa-0
-          v-for="(item, i) in items"
-          :class="[$vuetify.breakpoint.smAndDown ? 'pa-2' : 'mi mi--' + i]"
-          :key="i"
-          d-flex>
-          <v-card
-            dark
-            @mouseover="hoverIn"
-            @mouseout="hoverOut"
-          >
-          <v-card-media
-            height="250px"
-            :src="item.image"
-            :alt="item.image"
-          >
-            <v-container fill-height fluid class="bg-gradient">
-              <v-layout fill-height>
-                <v-flex xs12 align-end flexbox>
-                  <span class="headline">{{item.heading1}}</span>
-                </v-flex>
-              </v-layout>
-            </v-container>
-          </v-card-media>
-          <v-card-title class="min-h">
-            <div>
-              <p class="mt-3 " v-text="item.headingText2a"/>
-            </div>
-          </v-card-title>
-        </v-card>
-        </v-flex>
-      </v-layout>
-    </v-container>
+    <alpha-card-layout
+      :items="items"
+    ></alpha-card-layout>
   <alpha-hero
     src="/static/img/cert-weld/narek/c.jpg"
     alt="narek image"
@@ -87,22 +38,14 @@
 <script>
   /* eslint-disable no-undef */
 
+  import AlphaCardLayout from '../components/alpha/CardLayout'
   export default {
+    components: {AlphaCardLayout},
     metaInfo: {
       title: 'Services',
       meta: [
         {name: 'description', content: 'Customized vue-cli templates for Vue and Vuetify'}
       ]
-    },
-    methods: {
-      hoverIn (e) {
-        TweenMax.to(e.currentTarget, 0.3, {y: -6})
-        TweenMax.to(e.currentTarget.querySelectorAll('.headline'), 0.3, {x: 7})
-      },
-      hoverOut (e) {
-        TweenMax.to(e.currentTarget, 0.3, {y: 0})
-        TweenMax.to(e.currentTarget.querySelectorAll('.headline'), 0.3, {x: 0})
-      }
     },
     computed: {
       items () {
@@ -114,30 +57,4 @@
     }
   }
 </script>
-<style scoped lang="stylus">
-  .min-h
-    min-height: 150px
-  .mi
-    position relative
-  .mi--0, .mi--2, .mi--4
-    margin-top 2em
-    right -0.75em
-  .mi--1, mi--3, .mi--5
-    margin-top 0
-    z-index 1
 
-  .offset-4-grid
-    max-width 1366px
-
-  .offset-4-grid > div:nth-child(1)
-    left 2em
-  .offset-4-grid > div:nth-child(2)
-    left 1em
-  .offset-4-grid > div:nth-child(3)
-    left 0em
-  .offset-4-grid > div:nth-child(4)
-    left -1em
-
-  .bg-gradient
-    background linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(255, 255, 255, 0.1) 90%);
-</style>

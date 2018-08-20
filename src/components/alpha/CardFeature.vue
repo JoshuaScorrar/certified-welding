@@ -133,9 +133,6 @@
   .container.grid-list-lg .layout .flex
     padding 0
 
-  .v-card__text
-    font-weight 100
-
   .bg-gradient
     position absolute
     width 100%
