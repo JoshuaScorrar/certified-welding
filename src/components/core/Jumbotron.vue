@@ -56,7 +56,7 @@
     methods: {
       scrollDown () {
         this.scrolled = true
-        TweenMax.to(window, 0.7, {scrollTo: {y: '#view'}})
+        TweenMax.to(window, 0.7, {delay: 0.2, scrollTo: {y: '#view', autoKill: false}})
       }
     },
 
