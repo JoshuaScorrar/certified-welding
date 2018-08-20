@@ -249,11 +249,16 @@
       clear () {
         this.$refs.form.reset()
       },
+      encode (data) {
+        return Object.keys(data)
+          .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+          .join('&')
+      },
       handleSubmit () {
         fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: encode({ 'form-name': 'contact', name: this.name, email: this.email, message: this.message })
+          body: this.encode({ 'form-name': 'contact', name: this.name, email: this.email, message: this.message })
         })
           .then(() => alert('Success!'))
           .catch(error => alert(error))
