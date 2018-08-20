@@ -4,7 +4,7 @@
     <v-layout justify-space-between wrap>
 
       <v-flex d-flex xs12 md7 class="pa-2">
-        <v-form ref="form" v-model="valid" method="post" lazy-validation netlify name="submitMessage">
+        <v-form ref="form" v-model="valid" method="POST" lazy-validation netlify name="submitMessage">
           <v-text-field
             prepend-icon="account_box"
             v-model="name"
@@ -21,7 +21,7 @@
             :rules="emailRules"
             label="E-mail"
             name="email"
-            type="text"
+            type="email"
             required
           ></v-text-field>
 
