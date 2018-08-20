@@ -38,7 +38,6 @@
 
           <v-btn
             :disabled="!valid"
-            type="submit"
           >
             submit
           </v-btn>
@@ -248,6 +247,16 @@
       },
       clear () {
         this.$refs.form.reset()
+      },
+      handleSubmit () {
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: encode({ 'form-name': 'contact', name: this.name, email: this.email, message: this.message })
+        })
+          .then(() => alert('Success!'))
+          .catch(error => alert(error))
+        e.preventDefault()
       }
     },
     metaInfo: {
