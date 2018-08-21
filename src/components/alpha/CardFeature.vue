@@ -107,7 +107,7 @@
 <style lang="stylus" scoped>
 
   .invisible
-    transition opacity ease-in 0.4s
+    transition opacity ease-in 1s
 
   .fade-in
     visibility visible
