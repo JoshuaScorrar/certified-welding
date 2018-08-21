@@ -145,6 +145,9 @@
     transform-origin: center center 0
     transition: .3s cubic-bezier(.25,.8,.50,1)
 
+  .v-tabs
+    padding-top 0
+
   .v-tabs__bar
     background-color: transparent !important
 

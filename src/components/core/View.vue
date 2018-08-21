@@ -2,7 +2,7 @@
   <v-content>
     <div id="particles-js"></div>
     <transition name="view-fade" mode="out-in">
-      <router-view id="view" class="pt-5" />
+      <router-view id="view" class="pt-2" />
     </transition>
   </v-content>
 </template>

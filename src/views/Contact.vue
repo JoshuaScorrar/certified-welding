@@ -69,7 +69,7 @@
               thumb_up
             </v-icon>
           </v-flex>
-          <v-card-actions class="mt-5" v-if="!submitted">
+          <v-card-actions class="mt-3" v-if="!submitted">
             <v-spacer/>
             <v-btn
               class="px-5 mr-3"
@@ -234,7 +234,7 @@
       return {
         submitted: null,
         contact: this.$t('Views.Contact'),
-        valid: true,
+        valid: false,
         name: '',
         nameRules: [
           v => !!v || 'Name is required',

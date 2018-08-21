@@ -40,6 +40,7 @@
         this.delayAnimated = setTimeout(() => {
           console.log('Lazy Loaded at route change')
           $this.setLazyLoaded(true)
+          $this.animated = false
           $this.animateCards()
         }, from.path === '/' ? 3000 : 1000)
       }
@@ -79,4 +80,5 @@
   .invisible
     opacity 0
     visibility hidden
+
 </style>
