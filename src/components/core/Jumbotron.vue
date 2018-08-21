@@ -128,7 +128,7 @@
           TweenMax.fromTo('.scroll-arrow', 0.5, {y: -15}, {delay: 2, y: 0, ease: Quint.easeIn, yoyo: true, repeat: -1})
           TweenMax.staggerFromTo('#jumbotron .invisible', 1.5, {y: 40, autoAlpha: 0}, {y: 1, autoAlpha: 1}, 0.2)
         }, 1)
-      }, 500)
+      }, 750)
     }
   }
 </script>
