@@ -46,10 +46,10 @@
       ]
     },
     computed: {
-      items() {
+      items () {
         return this.$t('Views.Projects.items')
       },
-      testimonials() {
+      testimonials () {
         return this.$t('Views.Home.testimonials')
       }
     }

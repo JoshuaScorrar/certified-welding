@@ -17,6 +17,7 @@ import paths from './paths'
 
 function route (path, name) {
   return {
+    mode: 'history',
     name,
     path,
     component: (resovle) => import(
