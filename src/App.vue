@@ -37,11 +37,12 @@
         let $this = this
         this.animated = false
         clearTimeout(this.delayAnimated)
+        console.log(from)
         this.delayAnimated = setTimeout(() => {
           console.log('Lazy Loaded at route change')
           $this.setLazyLoaded(true)
           $this.animateCards()
-        }, 1000)
+        }, from.path === '/' ? 3000 : 1000)
       }
     },
     methods: {
