@@ -185,6 +185,6 @@
     width 100%
 
   .vh
-    height 75vh !important
+    height 80vh !important
 
 </style>
