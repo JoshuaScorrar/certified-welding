@@ -56,7 +56,7 @@
       },
       onScroll () {
         this.isScrolling = (window.pageYOffset ||
-          document.documentElement.scrollTop || 0) > ((this.$el.nextElementSibling.nextElementSibling.clientHeight / 2) || 100)
+          document.documentElement.scrollTop || 0) > ((this.$el.nextElementSibling.nextElementSibling.clientHeight / 2.5) || 100)
       }
     }
   }
