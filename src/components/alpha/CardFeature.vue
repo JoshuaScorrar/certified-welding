@@ -23,12 +23,12 @@
         :class="mobile ? 'pa-2' : ''"
       >
         <v-card
-          :class="[!lazyLoaded ? 'invisible' : '', !mobile ? 'mi--' + i : '']"
+          :class="[!mobile ? 'mi--' + i : '']"
           fill-height
           flat
           tile
           dark
-          class="grey darken-3 elevation-4"
+          class="invisible grey darken-3 elevation-4"
           @mouseover="hoverIn"
           @mouseout="hoverOut"
         >
@@ -64,13 +64,6 @@
       return {
         items: this.$t('Layout.View.items')
       }
-    },
-    mounted () {
-      let $this = this
-      setTimeout(() => {
-        $this.cardsShown = true
-        $this.showCards = true
-      }, 3000)
     },
     computed: {
       lazyLoaded () {
@@ -110,9 +103,6 @@
 </script>
 
 <style lang="stylus" scoped>
-  .invisible
-    opacity 0
-    visibility hidden
 
   #card-features
     max-width 1366px

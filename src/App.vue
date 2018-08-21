@@ -24,10 +24,20 @@
       }
     },
     mounted () {
+      let $this = this
       setTimeout(() => {
-        this.animateCards()
-        this.setLazyLoaded(true)
+        $this.setLazyLoaded(true)
+        $this.animateCards()
       }, 3000)
+    },
+    watch: {
+      $route (to, from) {
+        let $this = this
+        this.animated = false
+        setTimeout(() => {
+          $this.animateCards()
+        }, 2400)
+      }
     },
     methods: {
       ...mapMutations('app', ['setLazyLoaded']),
@@ -37,13 +47,13 @@
           return
         }
         this.animated = true
-        TweenMax.staggerFromTo('.v-card', 1, {y: 40, autoAlpha: 0}, {delay: 0.5, y: 0, autoAlpha: 1}, 0.2)
+        TweenMax.staggerFromTo('.v-card', 1.5, {y: 20, autoAlpha: 0}, {delay: 0.3, y: 0, autoAlpha: 1}, 0.2)
       },
       onScroll () {
         if (this.lazyTriggered && !this.getLazy()) {
-          this.animateCards()
           this.setLazyLoaded(true)
         }
+        this.animateCards()
         this.lazyTriggered = (window.pageYOffset ||
           document.documentElement.scrollTop || 0) >
           (10)
@@ -59,4 +69,8 @@
   .max-view-width
     max-width 1366px
     margin 0 auto
+
+  .invisible
+    opacity 0
+    visibility hidden
 </style>
