@@ -29,7 +29,6 @@
           dark
           @mouseover="hoverIn"
           @mouseout="hoverOut"
-          class="invisible"
         >
           <v-card-media
             height="250px"

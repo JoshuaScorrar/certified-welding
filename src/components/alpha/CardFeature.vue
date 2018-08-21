@@ -19,7 +19,7 @@
         d-flex
         v-for="(feature, i) in features"
         :key="i"
-        class="card-feature"
+        id="card-feature"
         :class="mobile ? 'pa-2' : ''"
       >
         <v-card

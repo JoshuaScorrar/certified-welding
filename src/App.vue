@@ -25,7 +25,8 @@
     },
     mounted () {
       let $this = this
-      setTimeout(() => {
+      clearTimeout(this.delayAnimated)
+      this.delayAnimated = setTimeout(() => {
         $this.setLazyLoaded(true)
         $this.animateCards()
       }, 3000)
@@ -34,9 +35,10 @@
       $route (to, from) {
         let $this = this
         this.animated = false
-        setTimeout(() => {
+        clearTimeout(this.delayAnimated)
+        this.delayAnimated = setTimeout(() => {
           $this.animateCards()
-        }, 2400)
+        }, 1000)
       }
     },
     methods: {
@@ -47,7 +49,7 @@
           return
         }
         this.animated = true
-        TweenMax.staggerFromTo('.v-card', 1.5, {y: 20, autoAlpha: 0}, {delay: 0.3, y: 0, autoAlpha: 1}, 0.2)
+        TweenMax.staggerFromTo('#card-feature .invisible.v-card', 1.5, {y: 20, autoAlpha: 0}, {delay: 0.3, y: 0, autoAlpha: 1}, 0.2)
       },
       onScroll () {
         if (this.lazyTriggered && !this.getLazy()) {

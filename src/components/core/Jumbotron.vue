@@ -19,27 +19,30 @@
             :key="$route.path"
           >
             <h1
-              :class="[fontBPSize, {'invisible' : !lazyLoaded}]"
-              class="white--text mb-3"
-              v-html="title"/>
+              :class="fontBPSize"
+              class="white--text mb-3">
+              {{title}}
+            </h1>
             <h2
-              :class="[fontBPSize, {'invisible' : !lazyLoaded}]"
-              class="white--text mb-4"
-              v-html="subTitle"/>
+              :class="fontBPSize"
+              class="white--text mb-4">
+              {{subTitle}}
+            </h2>
             <!--<p-->
               <!--:class="[fontBPSize, {'invisible' : !lazyLoaded}]"-->
               <!--class="white&#45;&#45;text"-->
               <!--v-html="subSubTitle">-->
             <!--</p>-->
             <v-btn
+              fab
+              small
               light
               class="mt-4"
-              :class="[{'invisible' : !lazyLoaded}, {'theme--dark' : scrolled}]"
+              :class="{'theme--dark' : scrolled}"
               @click="scrollDown">
-              <v-icon dark class="mr-3">
+              <v-icon dark large>
                 {{scrolled ? 'check_circle' : 'keyboard_arrow_down'}}
               </v-icon>
-              {{scrolled ? 'More Seen' : 'See More'}}
             </v-btn>
           </v-flex>
         </v-layout>
