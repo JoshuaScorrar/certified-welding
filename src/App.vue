@@ -27,6 +27,7 @@
       let $this = this
       clearTimeout(this.delayAnimated)
       this.delayAnimated = setTimeout(() => {
+        console.log('Lazy Loaded at mounted')
         $this.setLazyLoaded(true)
         $this.animateCards()
       }, 3000)
@@ -37,6 +38,8 @@
         this.animated = false
         clearTimeout(this.delayAnimated)
         this.delayAnimated = setTimeout(() => {
+          console.log('Lazy Loaded at route change')
+          $this.setLazyLoaded(true)
           $this.animateCards()
         }, 1000)
       }
@@ -53,12 +56,13 @@
       },
       onScroll () {
         if (this.lazyTriggered && !this.getLazy()) {
+          console.log('Lazy Loaded at scroll')
           this.setLazyLoaded(true)
         }
         this.animateCards()
         this.lazyTriggered = (window.pageYOffset ||
           document.documentElement.scrollTop || 0) >
-          (10)
+          (50)
       }
     }
   }
