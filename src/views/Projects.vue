@@ -42,7 +42,7 @@
     metaInfo: {
       title: 'Projects',
       meta: [
-        {name: 'description', content: 'Customized vue-cli templates for Vue and Vuetify'}
+        {name: 'description', content: 'From Structural Steel to Concrete Moulds to Vehicle Modifications, Certified Welding has put a wide variety of projects into the world'}
       ]
     },
     computed: {

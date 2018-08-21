@@ -223,6 +223,12 @@
 
   import AlphaTag from '../components/alpha/Tag'
   export default {
+    metaInfo: {
+      title: 'Contact',
+      meta: [
+        {name: 'description', content: 'For general inquiries, quotes or curiosity, get in touch with the the team at Certified Welding'}
+      ]
+    },
     components: {AlphaTag},
     data () {
       return {
@@ -274,12 +280,6 @@
           .catch(error => alert(error))
         e.preventDefault()
       }
-    },
-    metaInfo: {
-      title: 'Contact',
-      meta: [
-        {name: 'description', content: 'For general inquiries, get in touch with the the team at Certified Welding'}
-      ]
     }
   }
 </script>

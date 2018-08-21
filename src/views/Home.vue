@@ -62,7 +62,7 @@
     metaInfo: {
       title: 'Certified Welding',
       meta: [
-        {name: 'description', content: 'Serious Welding for serious projects, from structural steel to concrete moulds, we do it all.'}
+        {name: 'description', content: 'Serious Welding for serious projects, from structural steel to concrete moulds, Certified Welding does it all.'}
       ]
     },
     data () {

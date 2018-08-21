@@ -42,9 +42,9 @@
   export default {
     components: {AlphaCardLayout},
     metaInfo: {
-      title: 'Services',
+      title: 'Welding Services',
       meta: [
-        {name: 'description', content: 'Customized vue-cli templates for Vue and Vuetify'}
+        {name: 'description', content: 'Certified Welding offers a wide range of engineering expertise.'}
       ]
     },
     computed: {

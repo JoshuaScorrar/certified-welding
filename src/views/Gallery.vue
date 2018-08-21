@@ -14,9 +14,9 @@
 <script>
   export default {
     metaInfo: {
-      title: 'Projects',
+      title: 'Gallery',
       meta: [
-        { name: 'description', content: 'Customized vue-cli templates for Vue and Vuetify' }
+        { name: 'description', content: 'We like to show off what we\'ve worked on' }
       ]
     },
     computed: {

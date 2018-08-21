@@ -37,7 +37,6 @@
         let $this = this
         this.animated = false
         clearTimeout(this.delayAnimated)
-        console.log(from)
         this.delayAnimated = setTimeout(() => {
           console.log('Lazy Loaded at route change')
           $this.setLazyLoaded(true)
