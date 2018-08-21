@@ -33,8 +33,8 @@
         <v-carousel-item
           v-for="(pro, i) in computedProjects"
           :key="i"
-          :src="path + pro.path + pro.img"
-          :alt="'gallery image' + pro.path + pro.img + (webp ? '.webp' : '.jpg')"
+          :src="path + pro.path + pro.img + (webp ? '.webp' : '.jpg')"
+          :alt="'gallery image' + pro.path + pro.img"
           :class="$vuetify.breakpoint.smAndDown ? 'cover-img-mob' : ''"
         ></v-carousel-item>
       </v-carousel>

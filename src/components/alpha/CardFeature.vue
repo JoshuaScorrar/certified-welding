@@ -28,7 +28,7 @@
           flat
           tile
           dark
-          class="invisible grey darken-3 elevation-4"
+          class="grey darken-3 elevation-4"
           @mouseover="hoverIn"
           @mouseout="hoverOut"
         >
@@ -36,6 +36,8 @@
             :src="lazyLoad(feature)"
             :height="cardHeight"
             :alt="feature.image"
+            class="invisible"
+            :class="{'fade-in': lazyLoaded}"
           />
           <v-flex pa-4>
           <v-card-title class="title text-lg-center pa-0 mb-3" v-text="feature.title"/>
@@ -103,6 +105,13 @@
 </script>
 
 <style lang="stylus" scoped>
+
+  .invisible
+    transition opacity ease-in 0.4s
+
+  .fade-in
+    visibility visible
+    opacity 1
 
   #card-features
     max-width 1366px

@@ -53,6 +53,12 @@ const router = new Router({
   }
 })
 
+router.beforeEach((to, from, next) => {
+  setTimeout(() => {
+    next()
+  }, 150)
+})
+
 Vue.use(Meta)
 
 // Bootstrap Analytics

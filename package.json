@@ -25,6 +25,7 @@
     "soundplayer": "^1.1.1",
     "vue": "^2.5.2",
     "vue-analytics": "^5.12.3",
+    "vue-howler": "^0.7.0",
     "vue-i18n": "^8.0.0",
     "vue-meta": "^1.5.2",
     "vue-progressive-image": "^3.1.0",

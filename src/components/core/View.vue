@@ -66,7 +66,7 @@
     background transparent
 
   .view-fade-enter-active, .view-fade-leave-active
-    transition opacity .276s ease
+    transition opacity .4s ease
 
   .view-fade-enter, .view-fade-leave-to
     opacity 0

@@ -5,11 +5,11 @@
     v-model="inputValue"
     right
   >
-    <v-list>
+    <v-list light>
       <v-list-tile>
         <v-spacer />
         <v-btn icon @click="toggleDrawer">
-          <v-icon>mdi-close</v-icon>
+          <v-icon >close</v-icon>
         </v-btn>
       </v-list-tile>
       <v-list-tile

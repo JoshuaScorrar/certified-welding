@@ -6,7 +6,7 @@
     dense
     :color="!isScrolling ? 'transparent' : '#fafafaba'"
     v-scroll="onScroll"
-    class="pt-1 pb-1 z20"
+    class="pt-1 pb-1 z4"
   >
     <router-link :aria-label="'Home logo button'" to="/" class="toolbar-logo">
       <img
@@ -63,8 +63,8 @@
 </script>
 
 <style lang="stylus">
-  .z20
-    z-index 20 !important
+  /*.z20*/
+    /*z-index 20 !important*/
   .toolbar-logo
     cursor pointer
     height 100%

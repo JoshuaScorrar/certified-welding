@@ -26,40 +26,25 @@
       let $this = this
       clearTimeout(this.delayAnimated)
       this.delayAnimated = setTimeout(() => {
-        console.log('Lazy Loaded at mounted')
-        //$this.setLazyLoaded(true)
-        //$this.animateCards()
-      }, 3000)
+        $this.setLazyLoaded(true)
+      }, 1000)
     },
     watch: {
       $route (to, from) {
         let $this = this
-        this.animated = false
         clearTimeout(this.delayAnimated)
         this.delayAnimated = setTimeout(() => {
-          console.log('Lazy Loaded at route change')
           $this.setLazyLoaded(true)
-          $this.animated = false
-          //$this.animateCards()
-        }, from.path === '/' ? 3000 : 1000)
+        }, 3000)
       }
     },
     methods: {
       ...mapMutations('app', ['setLazyLoaded']),
       ...mapGetters('app', ['getLazy']),
-      animateCards () {
-        if (this.animated) {
-          return
-        }
-        this.animated = true
-        TweenMax.staggerFromTo('#card-feature .invisible.v-card', 1.5, {y: 20, autoAlpha: 0}, {delay: 0.3, y: 0, autoAlpha: 1}, 0.2)
-      },
       onScroll () {
         if (this.lazyTriggered && !this.getLazy()) {
-          console.log('Lazy Loaded at scroll')
           this.setLazyLoaded(true)
         }
-        this.animateCards()
         this.lazyTriggered = (window.pageYOffset ||
           document.documentElement.scrollTop || 0) >
           (50)
@@ -69,6 +54,17 @@
 </script>
 
 <style lang="stylus">
+
+  .q-fade-transition
+    &-leave-active
+      position: absolute
+
+    &-enter-active, &-leave, &-leave-to
+      transition: opacity 0.4s ease
+
+    &-enter, &-leave-to
+      opacity: 0
+
   .pointer
     cursor pointer
 

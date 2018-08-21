@@ -26,7 +26,7 @@
       :height="$vuetify.breakpoint.mdAndUp ? 500 : 'auto'"
       :jumbotron="false"
       dark
-      class="mt-5 bg-gradient"
+      class="mt-5 bg-gradient elevation-6"
     >
       <v-container
         fill-height

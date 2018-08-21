@@ -1,18 +1,18 @@
 <template>
   <video-bg
     id="jumbotron"
-    class="vh"
+    class="vh elevation-6"
     :sources="[heroVideo + '.webm', heroVideo + '.mp4', heroVideo + '.ogv']" :img="heroImage" :alt="heroImage">
     <div class="z0 bg-gradient"></div>
-    <v-fade-transition origin="top center 0.1" mode="out-in">
+      <q-fade-transition>
       <v-container
         fill-height
         fill-width
         :key="$route.path"
         v-if="isBooted"
-        class="z3"
+        class="z1"
       >
-        <v-layout align-center class="z4">
+        <v-layout align-center class="z2">
           <v-flex
             class="m-title"
             text-xs-center
@@ -34,20 +34,16 @@
               <!--v-html="subSubTitle">-->
             <!--</p>-->
             <v-btn
-              fab
-              small
               light
-              class="mt-4"
+              class="mt-5"
               :class="{'theme--dark' : scrolled}"
               @click="scrollDown">
-              <v-icon dark large>
-                {{scrolled ? 'check_circle' : 'keyboard_arrow_down'}}
-              </v-icon>
+              More Here
             </v-btn>
           </v-flex>
         </v-layout>
       </v-container>
-    </v-fade-transition>
+      </q-fade-transition>
   </video-bg>
 </template>
 
@@ -98,8 +94,10 @@
         let bp = this.$vuetify.breakpoint
         if (bp.smAndDown) {
           size = '768'
-        } else {
+        } else if (bp.lgAndDown) {
           size = '1280'
+        } else {
+          size = '1920'
         }
         return path + name + size + (this.webp ? '.webp' : '.jpg')
       },
@@ -175,11 +173,9 @@
     /*background: -webkit-linear-gradient(top, rgba(0,0,0,0.89) 0%,rgba(255,255,255,0.85) 76%,rgba(255,255,255,1) 100%); !* Chrome10-25,Safari5.1-6 *!*/
     background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%,rgba(103, 103, 103, 0.8) 65%,rgba(197, 197, 197, 0.6) 84%,rgba(255,255,255,1) 100%);
 
-  .z4
-    z-index 4
-
-  .z3
-    z-index 3
+  .z1
+    z-index 1
+    position relative
 
   .fill-width
     width 100%
