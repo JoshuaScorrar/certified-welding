@@ -4,7 +4,7 @@
       :items="items"
     ></alpha-card-layout>
     <alpha-hero
-      :src="'/static/img/cert-weld/narek/c' + (webp ? 'webp' : '.jpg')"
+      :src="'/static/img/cert-weld/narek/c' + (webp ? '.webp' : '.jpg')"
       alt="narek image"
       :height="$vuetify.breakpoint.mdAndUp ? 500 : 'auto'"
       :jumbotron="false"
