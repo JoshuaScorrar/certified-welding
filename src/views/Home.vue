@@ -80,7 +80,7 @@
     },
     methods: {
       lazyLoad () {
-        return this.botImgShown ? '/static/img/cert-weld/narek/c' + (this.webp ? 'webp' : '.jpg') : ''
+        return this.botImgShown ? '/static/img/cert-weld/narek/c' + (this.webp ? '.webp' : '.jpg') : ''
       },
       onScrollBotImg () {
         if (this.showBotImg && !this.botImgShown) {

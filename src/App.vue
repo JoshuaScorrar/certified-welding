@@ -27,8 +27,8 @@
       clearTimeout(this.delayAnimated)
       this.delayAnimated = setTimeout(() => {
         console.log('Lazy Loaded at mounted')
-        $this.setLazyLoaded(true)
-        $this.animateCards()
+        //$this.setLazyLoaded(true)
+        //$this.animateCards()
       }, 3000)
     },
     watch: {
@@ -40,7 +40,7 @@
           console.log('Lazy Loaded at route change')
           $this.setLazyLoaded(true)
           $this.animated = false
-          $this.animateCards()
+          //$this.animateCards()
         }, from.path === '/' ? 3000 : 1000)
       }
     },
