@@ -22,6 +22,16 @@ sync(store, router)
 
 Vue.config.productionTip = false
 
+Vue.mixin({
+  data () {
+    return {
+      get webp () {
+        return document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0
+      }
+    }
+  }
+})
+
 /* eslint-disable no-new */
 new Vue({
   i18n,

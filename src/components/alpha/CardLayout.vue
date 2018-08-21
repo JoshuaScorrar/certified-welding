@@ -32,7 +32,7 @@
         >
           <v-card-media
             height="250px"
-            :src="item.image"
+            :src="item.image + (webp ? '.webp' : '.jpg')"
             :alt="item.image"
           >
             <v-container fill-height fluid class="bg-gradient">
@@ -73,7 +73,8 @@
 
     methods: {
       lazyLoad (e) {
-        return this.$store.state.app.lazyLoaded ? '/static/img/' + e.img + '.jpg' : ''
+        let ext = this.webp ? '.webp' : '.jpg'
+        return this.$store.state.app.lazyLoaded ? ('/static/img/' + e.img + ext) : ''
       },
       direct (item) {
         this.$router.push(this.items.find((i) => i.text === item.name).to)

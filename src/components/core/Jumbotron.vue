@@ -101,7 +101,7 @@
         } else {
           size = '1280'
         }
-        return path + name + size + '.jpg'
+        return path + name + size + (this.webp ? '.webp' : '.jpg')
       },
       heroVideo () {
         let path = '/static/video/'

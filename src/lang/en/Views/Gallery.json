@@ -1,12 +1,6 @@
 {
   "jumbotronTitle": "TAKE A LOOK",
   "jumbotronSubTitle": "Scroll or click through the pictures below to see what we've done.",
-  "carouselImages": [
-    "static/img/welding/1.jpg",
-    "static/img/welding/2.jpg",
-    "static/img/welding/3.jpg",
-    "static/img/welding/4.jpg"
-  ],
   "categories": [
     {
       "text": "All",
@@ -46,7 +40,7 @@
     {
       "name": "concrete-mould-a",
       "path": "concrete-mould/",
-      "img": "a.jpg",
+      "img": "a",
       "categories": [
         4
       ]
@@ -54,7 +48,7 @@
     {
       "name": "concrete-mould-b",
       "path": "concrete-mould/",
-      "img": "b.jpg",
+      "img": "b",
       "categories": [
         4
       ]
@@ -62,7 +56,7 @@
     {
       "name": "concrete-mould-c",
       "path": "concrete-mould/",
-      "img": "c.jpg",
+      "img": "c",
       "categories": [
         4,
         2
@@ -71,7 +65,7 @@
     {
       "name": "concrete-mould-d",
       "path": "concrete-mould/",
-      "img": "d.jpg",
+      "img": "d",
       "categories": [
         4,
         2
@@ -80,7 +74,7 @@
     {
       "name": "concrete-mould-e",
       "path": "concrete-mould/",
-      "img": "e.jpg",
+      "img": "e",
       "categories": [
         2,
         4
@@ -89,7 +83,7 @@
     {
       "name": "concrete-pumps-a",
       "path": "concrete-pumps/",
-      "img": "a.jpg",
+      "img": "a",
       "categories": [
         3,
         5
@@ -98,7 +92,7 @@
     {
       "name": "concrete-pumps-b",
       "path": "concrete-pumps/",
-      "img": "b.jpg",
+      "img": "b",
       "categories": [
         3,
         5
@@ -107,7 +101,7 @@
     {
       "name": "concrete-pumps-c",
       "path": "concrete-pumps/",
-      "img": "c.jpg",
+      "img": "c",
       "categories": [
         3,
         5
@@ -116,7 +110,7 @@
     {
       "name": "concrete-pumps-d",
       "path": "concrete-pumps/",
-      "img": "d.jpg",
+      "img": "d",
       "categories": [
         3,
         5
@@ -125,7 +119,7 @@
     {
       "name": "concrete-pumps-e",
       "path": "concrete-pumps/",
-      "img": "e.jpg",
+      "img": "e",
       "categories": [
         3,
         5
@@ -134,7 +128,7 @@
     {
       "name": "h-and-b-a",
       "path": "h-and-b/",
-      "img": "a.jpg",
+      "img": "a",
       "categories": [
         1
       ]
@@ -142,7 +136,7 @@
     {
       "name": "h-and-b-b",
       "path": "h-and-b/",
-      "img": "b.jpg",
+      "img": "b",
       "categories": [
         1
       ]
@@ -150,7 +144,7 @@
     {
       "name": "h-and-b-c",
       "path": "h-and-b/",
-      "img": "c.jpg",
+      "img": "c",
       "categories": [
         1
       ]
@@ -158,7 +152,7 @@
     {
       "name": "narek-a",
       "path": "narek/",
-      "img": "a.jpg",
+      "img": "a",
       "categories": [
         1
       ]
@@ -166,7 +160,7 @@
     {
       "name": "narek-b",
       "path": "narek/",
-      "img": "b.jpg",
+      "img": "b",
       "categories": [
         1
       ]
@@ -174,7 +168,7 @@
     {
       "name": "narek-c",
       "path": "narek/",
-      "img": "c.jpg",
+      "img": "c",
       "categories": [
         1
       ]
@@ -182,7 +176,7 @@
     {
       "name": "narek-d",
       "path": "narek/",
-      "img": "d.jpg",
+      "img": "d",
       "categories": [
         1,
         6
@@ -191,7 +185,7 @@
     {
       "name": "stairs-a",
       "path": "stairs/",
-      "img": "a.jpg",
+      "img": "a",
       "categories": [
         1,
         7
@@ -200,7 +194,7 @@
     {
       "name": "stairs-b",
       "path": "stairs/",
-      "img": "b.jpg",
+      "img": "b",
       "categories": [
         2,
         7
@@ -209,7 +203,7 @@
     {
       "name": "stairs-c",
       "path": "stairs/",
-      "img": "c.jpg",
+      "img": "c",
       "categories": [
         2,
         7
@@ -218,7 +212,7 @@
     {
       "name": "structural-steel-a",
       "path": "structural-steel/",
-      "img": "a.jpg",
+      "img": "a",
       "categories": [
         6
       ]
@@ -226,7 +220,7 @@
     {
       "name": "structural-steel-b",
       "path": "structural-steel/",
-      "img": "b.jpg",
+      "img": "b",
       "categories": [
         6
       ]
@@ -234,7 +228,7 @@
     {
       "name": "structural-steel-c",
       "path": "structural-steel/",
-      "img": "c.jpg",
+      "img": "c",
       "categories": [
         6
       ]
@@ -242,7 +236,7 @@
     {
       "name": "structural-steel-d",
       "path": "structural-steel/",
-      "img": "d.jpg",
+      "img": "d",
       "categories": [
         6
       ]
@@ -250,7 +244,7 @@
     {
       "name": "transport-a",
       "path": "transport/",
-      "img": "a.jpg",
+      "img": "a",
       "categories": [
         2,
         3
@@ -259,7 +253,7 @@
     {
       "name": "transport-b",
       "path": "transport/",
-      "img": "b.jpg",
+      "img": "b",
       "categories": [
         2,
         3
@@ -268,7 +262,7 @@
     {
       "name": "transport-c",
       "path": "transport/",
-      "img": "c.jpg",
+      "img": "c",
       "categories": [
         2,
         3

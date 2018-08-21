@@ -34,7 +34,7 @@
           v-for="(pro, i) in computedProjects"
           :key="i"
           :src="path + pro.path + pro.img"
-          :alt="'gallery image' + pro.path + pro.img"
+          :alt="'gallery image' + pro.path + pro.img + (webp ? '.webp' : '.jpg')"
           :class="$vuetify.breakpoint.smAndDown ? 'cover-img-mob' : ''"
         ></v-carousel-item>
       </v-carousel>
@@ -76,7 +76,7 @@
             hover
             class="white--text"
             :alt="project.path + project.img"
-            :img="path + project.path + 'thumbs/' + project.img"
+            :img="path + project.path + 'thumbs/' + project.img + (webp ? '.webp' : '.jpg')"
             slot="activator"
             v-else
           >

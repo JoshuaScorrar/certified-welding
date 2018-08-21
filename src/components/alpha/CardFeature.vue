@@ -79,7 +79,7 @@
 
     methods: {
       lazyLoad (e) {
-        return this.$store.state.app.lazyLoaded ? '/static/img/' + e.img + '.jpg' : ''
+        return this.$store.state.app.lazyLoaded ? '/static/img/' + e.img + (this.webp ? '.webp' : '.jpg') : ''
       },
       direct (item) {
         this.$router.push(this.items.find((i) => i.text === item.name).to)
