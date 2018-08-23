@@ -2,4 +2,9 @@
 label: Joshua Scorrar
 hide_body: false
 is_partial: false
-fields: []
+fields:
+- type: text
+  name: test
+  label: Test
+  description: test
+  default: I want to see if this works
